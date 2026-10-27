@@ -254,8 +254,7 @@
           <p class="desc">${esc(L(it.desc))}</p>
           <span class="more"><span>${esc(L(s.more))}</span>${EXT}</span>
         </a>`).join("")}</div>
-      <div class="band"><div><b>${esc(L(s.band.title))}</b><p>${esc(L(s.band.text))}</p></div><a class="btn btn-primary" href="platform.html">${esc(L(s.band.cta))} ${ARROW}</a></div>
-      <p class="note">${esc(L(s.note))}</p>`;
+      <div class="band"><div><b>${esc(L(s.band.title))}</b><p>${esc(L(s.band.text))}</p></div><a class="btn btn-primary" href="platform.html">${esc(L(s.band.cta))} ${ARROW}</a></div>`;
   };
 
   /* HIS 三條路徑 */
@@ -485,12 +484,30 @@
     });
   };
 
+  /* 方案架構圖：純 HTML/CSS，文字依語言自 content.js 的 figure 欄位取得 */
+  const figureHTML = (f) => {
+    if (!f) return "";
+    const cell = (c) => `<div class="cell">${esc(L(c))}</div>`;
+    const cells = (arr) => `<div class="cells" style="--n:${arr.length}">${arr.map(cell).join("")}</div>`;
+    let body = "";
+    if (f.type === "stack") {
+      body = f.rows.map((r) => `${r.arrow ? `<div class="arrow">${esc(r.arrow)}</div>` : ""}<div class="fig-row${r.accent ? " accent" : ""}">${r.label ? `<div class="row-label">${esc(L(r.label))}</div>` : ""}${cells(r.cells)}</div>`).join("");
+    } else if (f.type === "hub") {
+      const n = f.nodes.map(cell);
+      body = `<div class="hub">${n.slice(0, 4).join("")}<div class="center">${esc(L(f.center))}</div>${n.slice(4).join("")}</div>`;
+    } else if (f.type === "steps") {
+      body = `<ol class="steps">${f.steps.map((s, i) => `<li${s.accent ? ' class="accent"' : ""}><span class="n">${i + 1}</span><div><b>${esc(L(s.t))}</b>${s.d ? `<span>${esc(L(s.d))}</span>` : ""}</div></li>`).join("")}</ol>`;
+    } else if (f.type === "grid") {
+      body = `<div class="groups">${f.groups.map((g) => `<div class="group"><b>${esc(L(g.t))}</b>${g.items.map((x) => `<span>${esc(L(x))}</span>`).join("")}</div>`).join("")}</div>`;
+    }
+    return `<div class="fig fig-${f.type}" role="img" aria-label="${esc(L(f.label))}"><div class="fig-label">${esc(L(f.label))}</div>${body}${f.foot ? `<div class="fig-foot">${esc(L(f.foot))}</div>` : ""}</div>`;
+  };
+
   /* 方案內頁 */
   R["solution"] = (el) => {
     const s = solutionById(el.dataset.id); if (!s) return;
     const S = C.solutions;
     document.title = `${L(s.name)}｜${lang === "zh" ? "醫盾 " : ""}AegisMed AI co.`;
-    const evidence = s.extra.find((x) => L(x.t) === L(S.evidenceTitle));
     el.innerHTML = `
       <section class="page-hero"><div class="container">
         <div class="num">${s.num} · ${esc(s.tag)}</div>
@@ -502,14 +519,13 @@
       </div></section>
       <section class="section" style="padding-top:0"><div class="container sol-intro">
         <div><div class="eyebrow">${esc(L(s.position))}</div><h2>${esc(L(s.headline))}</h2><p class="lead">${esc(L(s.intro))}</p></div>
-        <div class="pending-box" data-placeholder><b>${esc(L(S.evidenceTitle))}</b>${esc(evidence ? L(evidence.d) : L(S.evidencePending))}</div>
+        ${figureHTML(s.figure)}
       </div></section>
       <section class="section alt"><div class="container">
         <div class="pts">${s.points.map((p) => `<div class="pt"><h3>${esc(L(p.t))}</h3><p>${esc(L(p.d))}</p></div>`).join("")}</div>
       </div></section>
       <section class="section"><div class="container">
-        <div class="extra">${s.extra.filter((x) => x !== evidence).map((x) => `<div class="card"><h3>${esc(L(x.t))}</h3><p>${esc(L(x.d))}</p></div>`).join("")}</div>
-        <p class="disclaimer" data-placeholder>${esc(L(S.disclaimer))}</p>
+        <div class="extra">${s.extra.map((x) => `<div class="card"><h3>${esc(L(x.t))}</h3><p>${esc(L(x.d))}</p></div>`).join("")}</div>
       </div></section>
       <section class="section alt"><div class="container">
         <div class="cta"><div><h2>${esc(L(C.implementation.title))}</h2><p>${esc(L(C.implementation.note))}</p></div><a class="btn btn-light" href="contact.html?topic=${S.items.indexOf(s)}">${esc(L(S.cta))} ${ARROW}</a></div>

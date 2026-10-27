@@ -1,7 +1,8 @@
 /* ============================================================
    醫盾 AegisMed AI co. 官網 — 交接包 v2 文案（三語）
    zh 依「website_copy_文案擷取_v2.md」原文；en、vi 為翻譯初稿。
-   所有「示意／待核定」註記依交接包保留，核定後再移除。
+   六大方案內頁（solutions.items）已於 2026-10-27 改為定稿版：移除「本頁應附的證據」與設計提案註記，
+   導言與要點改為對外文案，並以 figure 欄位提供各方案架構圖的三語文字。其餘頁面的註記仍依交接包保留。
    ============================================================ */
 window.CONTENT = {
 
@@ -70,10 +71,6 @@ window.CONTENT = {
       text: { zh: "原生 AI 是可橫跨 HIS、EMR、ICU、MDT 的架構能力；AI 輔助是依需求選用的具體任務，並非六套必須分別採購的孤立系統。", en: "Native AI is an architecture capability that spans HIS, EMR, ICU and MDT; AI assistance is a set of specific tasks chosen as needed. They are not six isolated systems to be purchased separately.", vi: "AI nguyên bản là năng lực kiến trúc xuyên suốt HIS, EMR, ICU, MDT; AI hỗ trợ là các tác vụ cụ thể chọn theo nhu cầu, không phải sáu hệ thống riêng lẻ phải mua sắm riêng." },
       cta: { zh: "查看能力關係", en: "See how they relate", vi: "Xem quan hệ năng lực" }
     },
-    note: { zh: "方案規劃註記：功能、版本、供應商分工與可提供狀態須核定後發布；既有 EMR／Smart-ICU 交付範圍不因官網增加 HIS 轉換而自動擴大。", en: "Planning note: functions, versions, vendor roles and availability must be approved before publication; existing EMR / Smart-ICU delivery scopes do not automatically expand because HIS modernization appears on the website.", vi: "Ghi chú hoạch định: tính năng, phiên bản, phân công nhà cung cấp và trạng thái cung cấp phải được phê duyệt trước khi công bố; phạm vi bàn giao EMR / Smart-ICU hiện có không tự động mở rộng vì website thêm chuyển đổi HIS." },
-    disclaimer: { zh: "網站設計提案：本頁為建議的方案範圍與資訊架構，不代表功能已開發完成或正式供應。發布前須核對實際版本、證據、授權與合作責任。", en: "Website design proposal: this page presents a proposed scope and information architecture. It does not mean the functions are complete or officially available. Verify actual versions, evidence, licensing and responsibilities before publication.", vi: "Đề xuất thiết kế website: trang này trình bày phạm vi và kiến trúc thông tin đề xuất, không có nghĩa các tính năng đã hoàn thiện hay được cung cấp chính thức. Cần đối chiếu phiên bản thực tế, bằng chứng, giấy phép và trách nhiệm hợp tác trước khi công bố." },
-    evidenceTitle: { zh: "本頁應附的證據", en: "Evidence this page should carry", vi: "Bằng chứng trang này cần kèm theo" },
-    evidencePending: { zh: "資料核定中：核定後補上核定版本功能表、合成資料示範畫面、介接能力摘要與導入狀態。", en: "Pending approval: the approved feature list, demo screens with synthetic data, integration summary and deployment status will be added after sign-off.", vi: "Đang chờ phê duyệt: bảng tính năng phiên bản đã duyệt, màn hình minh họa với dữ liệu tổng hợp, tóm tắt khả năng tích hợp và trạng thái triển khai sẽ được bổ sung sau khi phê duyệt." },
     cta: { zh: "討論導入需求", en: "Discuss your needs", vi: "Thảo luận nhu cầu triển khai" },
     items: [
       { id: "his", num: "01", tag: "HIS MODERNIZATION", page: "solution-his.html",
@@ -82,6 +79,28 @@ window.CONTENT = {
         desc: { zh: "以成熟 HIS 核心為基礎，結合流程重整、資料移轉與在地化，規劃可驗證、可分階段推進的全院升級。", en: "Built on a mature HIS core, combining process redesign, data migration and localization to plan a verifiable, phased hospital-wide upgrade.", vi: "Dựa trên lõi HIS trưởng thành, kết hợp tái cấu trúc quy trình, chuyển đổi dữ liệu và bản địa hóa để hoạch định nâng cấp toàn viện có thể kiểm chứng và tiến hành theo giai đoạn." },
         headline: { zh: "從成熟核心，走向智慧化醫院。", en: "From a mature core to the smart hospital.", vi: "Từ lõi trưởng thành đến bệnh viện thông minh." },
         intro: { zh: "以成熟 HIS 產品為基礎，結合醫盾平台、流程改造與在地化；不是從零重寫全部核心，也不只是更換操作介面。", en: "Based on a mature HIS product, combined with the AegisMed platform, process redesign and localization. Not a rewrite of the entire core from scratch, and not just a new user interface.", vi: "Dựa trên sản phẩm HIS trưởng thành, kết hợp nền tảng AegisMed, cải tiến quy trình và bản địa hóa; không viết lại toàn bộ lõi từ đầu, cũng không chỉ thay giao diện." },
+        figure: {
+          type: "stack",
+          label: { zh: "轉換路徑", en: "Modernization path", vi: "Lộ trình chuyển đổi" },
+          rows: [
+            { label: { zh: "起點", en: "Starting point", vi: "Điểm xuất phát" }, cells: [
+              { zh: "既有 HIS", en: "Existing HIS", vi: "HIS hiện có" },
+              { zh: "院內系統", en: "Hospital systems", vi: "Hệ thống trong viện" },
+              { zh: "歷史資料", en: "Historical data", vi: "Dữ liệu lịch sử" } ] },
+            { arrow: "↓", label: { zh: "三條規劃路徑", en: "Three planning paths", vi: "Ba lộ trình hoạch định" }, cells: [
+              { zh: "整合升級", en: "Integrate and upgrade", vi: "Tích hợp nâng cấp" },
+              { zh: "分階段替換", en: "Phased replacement", vi: "Thay thế theo giai đoạn" },
+              { zh: "新院導入", en: "New-hospital deployment", vi: "Triển khai bệnh viện mới" } ] },
+            { arrow: "↓", accent: true, label: { zh: "核心", en: "Core", vi: "Lõi" }, cells: [
+              { zh: "成熟 HIS 核心 × 流程重整 × 在地化", en: "Mature HIS core × process redesign × localization", vi: "Lõi HIS trưởng thành × tái cấu trúc quy trình × bản địa hóa" } ] },
+            { arrow: "↓", label: { zh: "延伸", en: "Extensions", vi: "Mở rộng" }, cells: [
+              { zh: "EMR Platform", en: "EMR Platform", vi: "EMR Platform" },
+              { zh: "Smart-ICU", en: "Smart-ICU", vi: "Smart-ICU" },
+              { zh: "Smart-MDT", en: "Smart-MDT", vi: "Smart-MDT" },
+              { zh: "原生 AI", en: "Native AI", vi: "AI nguyên bản" } ] }
+          ],
+          foot: { zh: "資料移轉驗證 · 平行試行 · 切換演練 · 回復條件", en: "Data migration validation · parallel run · cutover rehearsal · rollback conditions", vi: "Kiểm chứng chuyển đổi dữ liệu · chạy song song · diễn tập chuyển đổi · điều kiện khôi phục" }
+        },
         points: [
           { t: { zh: "成熟核心與在地化", en: "Mature core and localization", vi: "Lõi trưởng thành và bản địa hóa" }, d: { zh: "依授權評估門急住、ADT、醫囑、藥事、費用與庫存等模組；確認當地語言、支付制度與作業需求。", en: "Evaluate outpatient, emergency, inpatient, ADT, orders, pharmacy, billing and inventory modules by license; confirm local language, payment system and operational needs.", vi: "Đánh giá theo giấy phép các phân hệ ngoại trú, cấp cứu, nội trú, ADT, y lệnh, dược, viện phí và kho; xác nhận ngôn ngữ, chế độ thanh toán và nhu cầu nghiệp vụ địa phương." } },
           { t: { zh: "資料移轉與驗證", en: "Data migration and validation", vi: "Chuyển đổi và kiểm chứng dữ liệu" }, d: { zh: "盤點主檔、歷史資料與病人識別；安排映射、轉檔、抽驗、對帳與稽核，確認移轉與歷史查詢範圍。", en: "Inventory master data, historical data and patient identity; plan mapping, conversion, sampling, reconciliation and audit; define the scope of migration and historical lookup.", vi: "Rà soát dữ liệu danh mục, dữ liệu lịch sử và định danh bệnh nhân; lập kế hoạch ánh xạ, chuyển đổi, lấy mẫu kiểm tra, đối soát và kiểm toán; xác định phạm vi chuyển đổi và tra cứu lịch sử." } },
@@ -91,7 +110,7 @@ window.CONTENT = {
         extra: [
           { t: { zh: "三種規劃路徑", en: "Three planning paths", vi: "Ba lộ trình hoạch định" }, d: { zh: "既有 HIS 整合升級、成熟新核心分階段替換，以及新院採成熟核心＋AI 原生設計。依系統條件與院方需求選擇，不預設全面一次汰換。", en: "Integrate and upgrade the existing HIS, replace with a mature new core in phases, or build a new hospital on a mature core with AI-native design. Chosen by system conditions and hospital needs; no default full replacement.", vi: "Tích hợp nâng cấp HIS hiện có, thay thế theo giai đoạn bằng lõi mới trưởng thành, hoặc bệnh viện mới dùng lõi trưởng thành kết hợp thiết kế AI nguyên bản. Lựa chọn theo điều kiện hệ thống và nhu cầu bệnh viện, không mặc định thay toàn bộ một lần." } },
           { t: { zh: "合作分工", en: "Division of responsibilities", vi: "Phân công hợp tác" }, d: { zh: "成熟核心供應商提供產品、授權與核心支援；醫盾規劃整體架構、臨床平台與 AI 整合；在地夥伴負責約定的在地化、部署與維運。實際分工以合約為準。", en: "The mature-core vendor provides the product, licensing and core support; AegisMed plans the overall architecture, clinical platform and AI integration; local partners handle agreed localization, deployment and operations. Actual roles follow the contract.", vi: "Nhà cung cấp lõi trưởng thành cung cấp sản phẩm, giấy phép và hỗ trợ lõi; AegisMed hoạch định kiến trúc tổng thể, nền tảng lâm sàng và tích hợp AI; đối tác địa phương phụ trách bản địa hóa, triển khai và vận hành theo thỏa thuận. Phân công thực tế theo hợp đồng." } },
-          { t: { zh: "與既有專案分開管理", en: "Managed separately from existing projects", vi: "Quản lý tách biệt với dự án hiện có" }, d: { zh: "HIS 轉換設定獨立預算、範圍與驗收，不因網站新增此方案就自動納入既有 EMR／Smart-ICU 的交付。", en: "HIS modernization has its own budget, scope and acceptance; adding it to the website does not fold it into existing EMR / Smart-ICU deliveries.", vi: "Chuyển đổi HIS có ngân sách, phạm vi và nghiệm thu riêng; việc thêm vào website không tự động đưa nó vào các bàn giao EMR / Smart-ICU hiện có." } }
+          { t: { zh: "獨立的範圍與驗收", en: "Independent scope and acceptance", vi: "Phạm vi và nghiệm thu độc lập" }, d: { zh: "HIS 轉換以獨立的預算、範圍與驗收標準推進，與既有的 EMR 或 Smart-ICU 專案分開管理；每個專案的交付內容與責任都清楚界定。", en: "HIS modernization proceeds with its own budget, scope and acceptance criteria, managed separately from existing EMR or Smart-ICU projects, so each project's deliverables and responsibilities are clearly defined.", vi: "Chuyển đổi HIS được triển khai với ngân sách, phạm vi và tiêu chí nghiệm thu riêng, quản lý tách biệt với các dự án EMR hoặc Smart-ICU hiện có; nội dung bàn giao và trách nhiệm của từng dự án được xác định rõ ràng." } }
         ]
       },
       { id: "emr", num: "02", tag: "CLINICAL WORKSPACE", page: "solution-emr.html",
@@ -99,15 +118,32 @@ window.CONTENT = {
         position: { zh: "電子病歷與臨床工作平台", en: "Electronic medical record and clinical workspace", vi: "Bệnh án điện tử và nền tảng làm việc lâm sàng" },
         desc: { zh: "以病人為中心，串連醫療紀錄、護理作業、檢驗影像與臨床工作流程，建立跨專業協作的資訊基礎。", en: "Patient-centered: connects medical records, nursing work, lab and imaging and clinical workflows to form the information base for cross-disciplinary collaboration.", vi: "Lấy bệnh nhân làm trung tâm, kết nối hồ sơ y tế, công việc điều dưỡng, xét nghiệm hình ảnh và quy trình lâm sàng, tạo nền tảng thông tin cho phối hợp liên chuyên khoa." },
         headline: { zh: "讓病歷成為共同工作的臨床基礎。", en: "Make the record the shared foundation of clinical work.", vi: "Để bệnh án trở thành nền tảng lâm sàng chung." },
-        intro: { zh: "頁面首先說明資訊分散與重複作業的問題，再呈現以病人為中心的工作流程、已確認功能與介接範圍。", en: "This page first describes the problem of scattered information and duplicate work, then presents the patient-centered workflow, confirmed functions and integration scope.", vi: "Trang này trước hết nêu vấn đề thông tin phân tán và thao tác trùng lặp, sau đó trình bày quy trình lấy bệnh nhân làm trung tâm, các tính năng đã xác nhận và phạm vi tích hợp." },
+        intro: { zh: "病歷資訊分散在不同系統、同一筆資料重複登錄，是臨床團隊每天面對的負擔。EMR Platform 以病人為中心整理紀錄、檢查結果與工作流程，讓醫師、護理與各專業在同一個臨床基礎上協作。", en: "Records scattered across systems and data entered more than once are a daily burden for clinical teams. EMR Platform organizes records, results and workflows around the patient, so physicians, nurses and allied professionals work from one shared clinical foundation.", vi: "Thông tin bệnh án phân tán ở nhiều hệ thống và cùng một dữ liệu phải nhập nhiều lần là gánh nặng hằng ngày của đội ngũ lâm sàng. EMR Platform sắp xếp hồ sơ, kết quả xét nghiệm và quy trình xoay quanh bệnh nhân, để bác sĩ, điều dưỡng và các chuyên ngành phối hợp trên cùng một nền tảng lâm sàng." },
+        figure: {
+          type: "hub",
+          label: { zh: "以病人為中心", en: "Patient-centered", vi: "Lấy bệnh nhân làm trung tâm" },
+          center: { zh: "病人", en: "Patient", vi: "Bệnh nhân" },
+          nodes: [
+            { zh: "醫療紀錄", en: "Medical records", vi: "Hồ sơ y tế" },
+            { zh: "護理紀錄", en: "Nursing records", vi: "Hồ sơ điều dưỡng" },
+            { zh: "檢驗結果", en: "Lab results", vi: "Kết quả xét nghiệm" },
+            { zh: "影像報告", en: "Imaging reports", vi: "Báo cáo hình ảnh" },
+            { zh: "簽核與角色", en: "Sign-off and roles", vi: "Ký duyệt và vai trò" },
+            { zh: "交班", en: "Handover", vi: "Bàn giao ca" },
+            { zh: "檢視與追蹤", en: "Review and follow-up", vi: "Xem xét và theo dõi" },
+            { zh: "跨專業協作", en: "Cross-disciplinary collaboration", vi: "Phối hợp liên chuyên khoa" }
+          ],
+          foot: { zh: "同一個臨床基礎，供 Smart-ICU、Smart-MDT 與 AI 能力共用", en: "One clinical foundation shared by Smart-ICU, Smart-MDT and AI capabilities", vi: "Một nền tảng lâm sàng dùng chung cho Smart-ICU, Smart-MDT và năng lực AI" }
+        },
         points: [
-          { t: { zh: "臨床與護理紀錄", en: "Clinical and nursing records", vi: "Hồ sơ lâm sàng và điều dưỡng" }, d: { zh: "呈現實際支援的紀錄類型、簽核流程與角色分工。", en: "Show the record types actually supported, sign-off flows and role assignments.", vi: "Trình bày các loại hồ sơ thực tế hỗ trợ, quy trình ký duyệt và phân vai." } },
-          { t: { zh: "檢驗與影像資訊", en: "Lab and imaging information", vi: "Thông tin xét nghiệm và hình ảnh" }, d: { zh: "說清楚哪些資料可整合、來源與更新方式。", en: "State clearly which data can be integrated, its source and how it is updated.", vi: "Nói rõ dữ liệu nào có thể tích hợp, nguồn và cách cập nhật." } },
-          { t: { zh: "臨床工作流程", en: "Clinical workflows", vi: "Quy trình lâm sàng" }, d: { zh: "用合成資料示範紀錄、交班、檢視與追蹤等流程。", en: "Demonstrate documentation, handover, review and follow-up flows with synthetic data.", vi: "Minh họa quy trình ghi chép, bàn giao, xem xét và theo dõi bằng dữ liệu tổng hợp." } },
-          { t: { zh: "部署與支援", en: "Deployment and support", vi: "Triển khai và hỗ trợ" }, d: { zh: "列明部署選項、介接前提、版本範圍及支援服務。", en: "List deployment options, integration prerequisites, version scope and support services.", vi: "Liệt kê phương án triển khai, điều kiện tích hợp, phạm vi phiên bản và dịch vụ hỗ trợ." } }
+          { t: { zh: "臨床與護理紀錄", en: "Clinical and nursing records", vi: "Hồ sơ lâm sàng và điều dưỡng" }, d: { zh: "依紀錄類型規劃結構化欄位與自由文字，搭配簽核流程與角色分工，每一筆紀錄的責任與時序都清楚可查。", en: "Structured fields and free text are planned by record type, with sign-off flows and role assignments, so the responsibility and timing of every entry are traceable.", vi: "Hoạch định trường dữ liệu có cấu trúc và văn bản tự do theo từng loại hồ sơ, kết hợp quy trình ký duyệt và phân vai, để trách nhiệm và thời điểm của từng bản ghi đều có thể tra cứu." } },
+          { t: { zh: "檢驗與影像資訊", en: "Lab and imaging information", vi: "Thông tin xét nghiệm và hình ảnh" }, d: { zh: "整合檢驗結果與影像報告，標示資料來源與更新時間，讓檢視者清楚資料從哪裡來、何時更新。", en: "Lab results and imaging reports are integrated with source and update-time labels, so viewers know where each item came from and when it was last updated.", vi: "Tích hợp kết quả xét nghiệm và báo cáo hình ảnh, ghi rõ nguồn dữ liệu và thời điểm cập nhật, để người xem biết dữ liệu đến từ đâu và được cập nhật khi nào." } },
+          { t: { zh: "臨床工作流程", en: "Clinical workflows", vi: "Quy trình lâm sàng" }, d: { zh: "紀錄、交班、檢視與追蹤在同一個工作面完成，減少切換系統與重複輸入。", en: "Documentation, handover, review and follow-up are completed in one workspace, reducing system switching and duplicate entry.", vi: "Ghi chép, bàn giao ca, xem xét và theo dõi được thực hiện trên cùng một không gian làm việc, giảm chuyển đổi hệ thống và nhập liệu trùng lặp." } },
+          { t: { zh: "部署與支援", en: "Deployment and support", vi: "Triển khai và hỗ trợ" }, d: { zh: "提供院內部署與既有系統介接的選項，依院方環境確認介接前提、版本範圍與支援服務。", en: "On-premise deployment and integration with existing systems are both available; integration prerequisites, version scope and support services are confirmed for each hospital's environment.", vi: "Cung cấp lựa chọn triển khai tại viện và tích hợp với hệ thống hiện có; điều kiện tích hợp, phạm vi phiên bản và dịch vụ hỗ trợ được xác nhận theo môi trường của từng bệnh viện." } }
         ],
         extra: [
-          { t: { zh: "本頁應附的證據", en: "Evidence this page should carry", vi: "Bằng chứng trang này cần kèm theo" }, d: { zh: "核定版本功能表、已完成的示範畫面、介接能力摘要、試點或正式導入狀態。示範畫面須使用合成資料。", en: "Approved feature list, completed demo screens, integration summary, pilot or production status. Demo screens must use synthetic data.", vi: "Bảng tính năng phiên bản đã duyệt, màn hình minh họa đã hoàn thành, tóm tắt khả năng tích hợp, trạng thái thí điểm hoặc triển khai chính thức. Màn hình minh họa phải dùng dữ liệu tổng hợp." } }
+          { t: { zh: "介接能力", en: "Integration capability", vi: "Khả năng tích hợp" }, d: { zh: "可與成熟 HIS 核心、檢驗與影像系統共用資料，並為 Smart-ICU 與 Smart-MDT 提供病人脈絡；介接範圍依院方系統條件逐項確認。", en: "Shares data with the mature HIS core and lab and imaging systems, and provides patient context to Smart-ICU and Smart-MDT. Integration scope is confirmed item by item against the hospital's systems.", vi: "Chia sẻ dữ liệu với lõi HIS trưởng thành, hệ thống xét nghiệm và hình ảnh, đồng thời cung cấp bối cảnh bệnh nhân cho Smart-ICU và Smart-MDT; phạm vi tích hợp được xác nhận từng mục theo điều kiện hệ thống của bệnh viện." } },
+          { t: { zh: "與其他方案的關係", en: "Relationship to the other solutions", vi: "Quan hệ với các giải pháp khác" }, d: { zh: "EMR Platform 是臨床工作的共同基礎：Smart-ICU 與 Smart-MDT 在這個基礎上延伸專科流程，原生 AI 與 AI 輔助則依授權取得病人脈絡與紀錄。", en: "EMR Platform is the shared foundation of clinical work: Smart-ICU and Smart-MDT extend specialty workflows on top of it, while native AI and AI assistance access patient context and records under authorization.", vi: "EMR Platform là nền tảng chung của công việc lâm sàng: Smart-ICU và Smart-MDT mở rộng quy trình chuyên khoa trên nền tảng này, còn AI nguyên bản và AI hỗ trợ truy cập bối cảnh bệnh nhân và hồ sơ theo ủy quyền." } }
         ]
       },
       { id: "icu", num: "03", tag: "CRITICAL CARE", page: "solution-smart-icu.html",
@@ -115,15 +151,29 @@ window.CONTENT = {
         position: { zh: "智慧重症與病房照護", en: "Smart critical and ward care", vi: "Hồi sức và chăm sóc phòng bệnh thông minh" },
         desc: { zh: "整合床邊設備、生命徵象、照護紀錄與趨勢，規劃風險提示、人工覆核及事件追蹤的照護流程。", en: "Integrates bedside devices, vital signs, care records and trends to plan care workflows with risk alerts, human review and event tracking.", vi: "Tích hợp thiết bị đầu giường, sinh hiệu, hồ sơ chăm sóc và xu hướng; hoạch định quy trình chăm sóc với cảnh báo nguy cơ, rà soát bởi con người và theo dõi sự kiện." },
         headline: { zh: "讓監測資訊進入照護流程。", en: "Bring monitoring information into the care workflow.", vi: "Đưa thông tin theo dõi vào quy trình chăm sóc." },
-        intro: { zh: "以一個床位或照護團隊的工作為主線，呈現設備資訊如何被整合、醫護如何檢視趨勢，以及事件如何被覆核與追蹤。", en: "Following the work of one bed or care team, show how device data is integrated, how clinicians review trends, and how events are reviewed and tracked.", vi: "Lấy công việc của một giường bệnh hoặc một đội chăm sóc làm trục chính, trình bày cách tích hợp thông tin thiết bị, cách nhân viên y tế xem xu hướng và cách sự kiện được rà soát, theo dõi." },
+        intro: { zh: "重症單位的資訊來自床邊設備、生命徵象、照護紀錄與檢驗結果。Smart-ICU 以一個床位與照護團隊的工作為主線，把這些資訊整合為可檢視的趨勢，讓風險提示經過人工覆核後，進入通知、處理與紀錄的照護流程。", en: "Critical-care information comes from bedside devices, vital signs, care records and lab results. Smart-ICU follows the work of one bed and its care team, integrating this information into reviewable trends so that risk alerts, after human review, flow into notification, handling and documentation.", vi: "Thông tin trong đơn vị hồi sức đến từ thiết bị đầu giường, sinh hiệu, hồ sơ chăm sóc và kết quả xét nghiệm. Smart-ICU lấy công việc của một giường bệnh và đội chăm sóc làm trục chính, tích hợp các thông tin này thành xu hướng có thể xem xét, để cảnh báo nguy cơ sau khi được con người rà soát sẽ đi vào quy trình thông báo, xử lý và ghi nhận." },
+        figure: {
+          type: "steps",
+          label: { zh: "照護流程", en: "Care workflow", vi: "Quy trình chăm sóc" },
+          steps: [
+            { t: { zh: "床邊設備與生命徵象", en: "Bedside devices and vital signs", vi: "Thiết bị đầu giường và sinh hiệu" }, d: { zh: "監視器、設備資料、照護紀錄", en: "Monitors, device data, care records", vi: "Màn hình theo dõi, dữ liệu thiết bị, hồ sơ chăm sóc" } },
+            { t: { zh: "資料整合與驗證", en: "Data integration and validation", vi: "Tích hợp và kiểm chứng dữ liệu" }, d: { zh: "設備與通訊協定逐一驗證", en: "Each device and protocol validated", vi: "Kiểm chứng từng thiết bị và giao thức" } },
+            { t: { zh: "趨勢與病人脈絡", en: "Trends and patient context", vi: "Xu hướng và bối cảnh bệnh nhân" }, d: { zh: "時間軸、來源標示、紀錄對照", en: "Timeline, source labels, record cross-reference", vi: "Dòng thời gian, nhãn nguồn, đối chiếu hồ sơ" } },
+            { t: { zh: "風險提示", en: "Risk alerts", vi: "Cảnh báo nguy cơ" }, d: { zh: "臨床規則 · 評估量表 · AI 模型", en: "Clinical rules · assessment scores · AI models", vi: "Quy tắc lâm sàng · thang điểm · mô hình AI" } },
+            { accent: true, t: { zh: "人工覆核", en: "Human review", vi: "Rà soát bởi con người" }, d: { zh: "醫護確認後才進入處置流程", en: "Enters handling only after clinician confirmation", vi: "Chỉ vào quy trình xử lý sau khi nhân viên y tế xác nhận" } },
+            { t: { zh: "通知、處理與紀錄", en: "Notification, handling and documentation", vi: "Thông báo, xử lý và ghi nhận" }, d: { zh: "負責人、狀態與完整歷程", en: "Owner, status and full history", vi: "Người phụ trách, trạng thái và toàn bộ quá trình" } }
+          ],
+          foot: { zh: "臨床決策由醫護負責；設備資料與紀錄可供 EMR Platform 與原生 AI 架構依授權使用", en: "Clinical decisions remain with clinicians; device data and records are available to EMR Platform and the native AI architecture under authorization", vi: "Quyết định lâm sàng do nhân viên y tế chịu trách nhiệm; dữ liệu thiết bị và hồ sơ có thể được EMR Platform và kiến trúc AI nguyên bản sử dụng theo ủy quyền" }
+        },
         points: [
-          { t: { zh: "設備資料整合", en: "Device data integration", vi: "Tích hợp dữ liệu thiết bị" }, d: { zh: "列出已驗證設備／協定；未驗證設備標示需評估。", en: "List validated devices and protocols; mark unvalidated devices as requiring assessment.", vi: "Liệt kê thiết bị / giao thức đã kiểm chứng; thiết bị chưa kiểm chứng ghi rõ cần đánh giá." } },
-          { t: { zh: "趨勢與病人脈絡", en: "Trends and patient context", vi: "Xu hướng và bối cảnh bệnh nhân" }, d: { zh: "示範時間軸、來源標示、紀錄對照與資料品質提示。", en: "Demonstrate timelines, source labels, record cross-reference and data-quality hints.", vi: "Minh họa dòng thời gian, nhãn nguồn, đối chiếu hồ sơ và gợi ý chất lượng dữ liệu." } },
-          { t: { zh: "風險提示與覆核", en: "Risk alerts and review", vi: "Cảnh báo nguy cơ và rà soát" }, d: { zh: "區分規則、量表與 AI 模型；揭露適用族群與限制。", en: "Distinguish rules, scores and AI models; disclose applicable populations and limits.", vi: "Phân biệt quy tắc, thang điểm và mô hình AI; công bố nhóm áp dụng và giới hạn." } },
-          { t: { zh: "照護事件追蹤", en: "Care event tracking", vi: "Theo dõi sự kiện chăm sóc" }, d: { zh: "呈現通知、確認、處理與紀錄的流程邊界。", en: "Show the workflow boundaries of notification, acknowledgment, handling and documentation.", vi: "Trình bày ranh giới quy trình thông báo, xác nhận, xử lý và ghi nhận." } }
+          { t: { zh: "設備資料整合", en: "Device data integration", vi: "Tích hợp dữ liệu thiết bị" }, d: { zh: "介接床邊設備與生命徵象資料，導入前逐一驗證設備與通訊協定；尚未驗證的設備先納入評估清單，不預設可直接連線。", en: "Bedside device and vital-sign data are integrated, with each device and protocol validated before go-live; devices not yet validated go on an assessment list rather than being assumed to connect.", vi: "Tích hợp dữ liệu thiết bị đầu giường và sinh hiệu; từng thiết bị và giao thức được kiểm chứng trước khi triển khai, thiết bị chưa kiểm chứng được đưa vào danh sách đánh giá thay vì mặc định có thể kết nối." } },
+          { t: { zh: "趨勢與病人脈絡", en: "Trends and patient context", vi: "Xu hướng và bối cảnh bệnh nhân" }, d: { zh: "以時間軸呈現生命徵象與處置，標示資料來源並對照照護紀錄；資料缺漏或品質異常時即時提示。", en: "Vital signs and interventions are shown on a timeline with source labels and cross-referenced to care records; gaps or quality issues in the data are flagged.", vi: "Trình bày sinh hiệu và can thiệp trên dòng thời gian, ghi rõ nguồn dữ liệu và đối chiếu với hồ sơ chăm sóc; dữ liệu thiếu hoặc chất lượng bất thường được nhắc ngay." } },
+          { t: { zh: "風險提示與覆核", en: "Risk alerts and review", vi: "Cảnh báo nguy cơ và rà soát" }, d: { zh: "提示分為臨床規則、評估量表與 AI 模型三類，各自標示適用族群與限制；提示經醫護覆核後才進入處置流程。", en: "Alerts are categorized as clinical rules, assessment scores or AI models, each labeled with its applicable population and limits; an alert enters the handling workflow only after clinician review.", vi: "Cảnh báo được chia thành ba loại: quy tắc lâm sàng, thang điểm đánh giá và mô hình AI, mỗi loại ghi rõ nhóm áp dụng và giới hạn; cảnh báo chỉ đi vào quy trình xử lý sau khi nhân viên y tế rà soát." } },
+          { t: { zh: "照護事件追蹤", en: "Care event tracking", vi: "Theo dõi sự kiện chăm sóc" }, d: { zh: "從通知、確認、處理到紀錄，每個事件都有負責人與狀態，完整歷程可回溯。", en: "From notification and acknowledgment to handling and documentation, every event has an owner and a status, and the full history can be traced.", vi: "Từ thông báo, xác nhận, xử lý đến ghi nhận, mỗi sự kiện đều có người phụ trách và trạng thái, toàn bộ quá trình có thể truy vết." } }
         ],
         extra: [
-          { t: { zh: "避免無證據的效益數字", en: "No unsupported benefit figures", vi: "Không nêu con số hiệu quả thiếu bằng chứng" }, d: { zh: "不自行填入死亡率下降、提早預警時間或準確率。公開結果時應列出版本、場景、樣本與衡量方式。", en: "Do not insert mortality reduction, early-warning lead time or accuracy figures. Published results must state version, setting, sample and measurement method.", vi: "Không tự điền giảm tử vong, thời gian cảnh báo sớm hay độ chính xác. Khi công bố kết quả phải nêu phiên bản, bối cảnh, mẫu và phương pháp đo." } }
+          { t: { zh: "成效的揭露方式", en: "How outcomes are reported", vi: "Cách công bố hiệu quả" }, d: { zh: "Smart-ICU 的成效以實際導入場域的版本、場景、樣本與衡量方式為準，公開時一併說明，不以單一數字代表整體效益。", en: "Smart-ICU outcomes are reported with the version, setting, sample and measurement method of the actual deployment, published together, rather than as a single headline figure.", vi: "Hiệu quả của Smart-ICU được công bố kèm phiên bản, bối cảnh, mẫu và phương pháp đo của nơi triển khai thực tế, không dùng một con số đơn lẻ để đại diện cho toàn bộ hiệu quả." } },
+          { t: { zh: "介接能力", en: "Integration capability", vi: "Khả năng tích hợp" }, d: { zh: "與 EMR Platform 共用病人脈絡與照護紀錄；整合後的設備資料可供原生 AI 架構依授權使用，並可依約定回寫至院內系統。", en: "Shares patient context and care records with EMR Platform; integrated device data can be used by the native AI architecture under authorization and written back to hospital systems as agreed.", vi: "Dùng chung bối cảnh bệnh nhân và hồ sơ chăm sóc với EMR Platform; dữ liệu thiết bị sau tích hợp có thể được kiến trúc AI nguyên bản sử dụng theo ủy quyền và ghi ngược về hệ thống trong viện theo thỏa thuận." } }
         ]
       },
       { id: "mdt", num: "04", tag: "COLLABORATIVE CARE", page: "solution-smart-mdt.html",
@@ -131,15 +181,29 @@ window.CONTENT = {
         position: { zh: "會診與多專業共同照護", en: "Consultation and multidisciplinary care", vi: "Hội chẩn và chăm sóc đa chuyên khoa" },
         desc: { zh: "串連一般住院會診、Pre-MDT、跨科討論與照護計畫，讓共同決策延伸至任務執行與追蹤。", en: "Connects inpatient consultations, pre-MDT preparation, cross-specialty discussion and care plans so shared decisions extend into task execution and follow-up.", vi: "Kết nối hội chẩn nội trú thông thường, Pre-MDT, thảo luận liên khoa và kế hoạch chăm sóc, để quyết định chung đi tới thực hiện và theo dõi nhiệm vụ." },
         headline: { zh: "從會診申請到共同照護計畫。", en: "From consultation request to shared care plan.", vi: "Từ yêu cầu hội chẩn đến kế hoạch chăm sóc chung." },
-        intro: { zh: "整合一般住院會診與複雜疾病多專科討論的敘事；避免將 Smart-MDT 僅介紹為視訊會議工具。", en: "Combines the narrative of routine inpatient consultation and complex-disease multidisciplinary discussion; Smart-MDT is not presented as merely a video-conferencing tool.", vi: "Kết hợp câu chuyện hội chẩn nội trú thông thường và thảo luận đa chuyên khoa cho bệnh phức tạp; không giới thiệu Smart-MDT chỉ như một công cụ họp trực tuyến." },
+        intro: { zh: "從一般住院會診到複雜疾病的多專科討論，Smart-MDT 串連申請、會前準備、討論與共同照護計畫，讓決策一路延伸到任務執行與追蹤，而不只是一場視訊會議。", en: "From routine inpatient consultations to multidisciplinary discussion of complex disease, Smart-MDT connects the request, pre-meeting preparation, discussion and shared care plan, carrying decisions through to task execution and follow-up rather than ending with a video call.", vi: "Từ hội chẩn nội trú thông thường đến thảo luận đa chuyên khoa cho bệnh phức tạp, Smart-MDT kết nối yêu cầu, chuẩn bị trước hội chẩn, thảo luận và kế hoạch chăm sóc chung, đưa quyết định đi tới thực hiện và theo dõi nhiệm vụ, chứ không chỉ là một cuộc họp trực tuyến." },
+        figure: {
+          type: "steps",
+          label: { zh: "會診流程", en: "Consultation workflow", vi: "Quy trình hội chẩn" },
+          steps: [
+            { t: { zh: "會診申請", en: "Consultation request", vi: "Yêu cầu hội chẩn" }, d: { zh: "一般住院會診或 MDT 需求", en: "Inpatient consultation or MDT need", vi: "Hội chẩn nội trú hoặc nhu cầu MDT" } },
+            { t: { zh: "分派與回覆", en: "Assignment and reply", vi: "Phân công và phản hồi" }, d: { zh: "時效管理、狀態追蹤", en: "Turnaround management, status tracking", vi: "Quản lý thời hạn, theo dõi trạng thái" } },
+            { t: { zh: "Pre-MDT 會前準備", en: "Pre-MDT preparation", vi: "Chuẩn bị Pre-MDT" }, d: { zh: "病程、影像、病理、缺件標示", en: "Course, imaging, pathology, missing items", vi: "Diễn tiến, hình ảnh, giải phẫu bệnh, phần còn thiếu" } },
+            { t: { zh: "多專科討論", en: "Multidisciplinary discussion", vi: "Thảo luận đa chuyên khoa" }, d: { zh: "各科意見、實證支援", en: "Specialty opinions, evidence support", vi: "Ý kiến các khoa, hỗ trợ bằng chứng" } },
+            { accent: true, t: { zh: "共同照護計畫", en: "Shared care plan", vi: "Kế hoạch chăm sóc chung" }, d: { zh: "共同決定、紀錄與負責人", en: "Joint decision, record and owner", vi: "Quyết định chung, ghi nhận và người phụ trách" } },
+            { t: { zh: "任務執行與追蹤", en: "Task execution and follow-up", vi: "Thực hiện và theo dõi nhiệm vụ" }, d: { zh: "分工、回報、再討論、結案", en: "Assignment, reporting, re-discussion, closure", vi: "Phân công, báo cáo, thảo luận lại, kết thúc" } }
+          ],
+          foot: { zh: "每個節點都留下紀錄與負責人；病歷、影像與病理資訊與 EMR Platform 共用", en: "Every step keeps a record and an owner; records, imaging and pathology are shared with EMR Platform", vi: "Mỗi bước đều có ghi nhận và người phụ trách; bệnh án, hình ảnh và giải phẫu bệnh dùng chung với EMR Platform" }
+        },
         points: [
-          { t: { zh: "一般住院會診", en: "Routine inpatient consultation", vi: "Hội chẩn nội trú thông thường" }, d: { zh: "申請、分派、回覆、時效與結案，依實際功能說明。", en: "Request, assignment, reply, turnaround and closure, described per actual functions.", vi: "Yêu cầu, phân công, phản hồi, thời hạn và kết thúc, mô tả theo tính năng thực tế." } },
-          { t: { zh: "Pre-MDT 會前準備", en: "Pre-MDT preparation", vi: "Chuẩn bị Pre-MDT" }, d: { zh: "彙整病程、影像與病理，標示缺件與討論問題。", en: "Compile course, imaging and pathology; flag missing items and discussion questions.", vi: "Tổng hợp diễn tiến, hình ảnh và giải phẫu bệnh; đánh dấu phần thiếu và câu hỏi thảo luận." } },
-          { t: { zh: "MDT 與實證支援", en: "MDT and evidence support", vi: "MDT và hỗ trợ bằng chứng" }, d: { zh: "記錄意見及共同計畫；PICO 與文獻功能依版本標示。", en: "Record opinions and the shared plan; PICO and literature functions labeled by version.", vi: "Ghi nhận ý kiến và kế hoạch chung; tính năng PICO và tài liệu ghi theo phiên bản." } },
-          { t: { zh: "照護任務與追蹤", en: "Care tasks and follow-up", vi: "Nhiệm vụ chăm sóc và theo dõi" }, d: { zh: "呈現執行分工、結果回報、再討論及追蹤節點。", en: "Show task assignment, result reporting, re-discussion and follow-up checkpoints.", vi: "Trình bày phân công thực hiện, báo cáo kết quả, thảo luận lại và các mốc theo dõi." } }
+          { t: { zh: "一般住院會診", en: "Routine inpatient consultation", vi: "Hội chẩn nội trú thông thường" }, d: { zh: "會診申請、分派、回覆、時效管理與結案在同一流程完成，各科的待辦與回覆狀態一目了然。", en: "Consultation request, assignment, reply, turnaround management and closure run in one workflow, with each department's pending items and reply status visible at a glance.", vi: "Yêu cầu hội chẩn, phân công, phản hồi, quản lý thời hạn và kết thúc được thực hiện trong cùng một quy trình; việc cần làm và trạng thái phản hồi của từng khoa hiển thị rõ ràng." } },
+          { t: { zh: "Pre-MDT 會前準備", en: "Pre-MDT preparation", vi: "Chuẩn bị Pre-MDT" }, d: { zh: "彙整病程、影像與病理資料，標示缺件與待討論問題，讓會議時間用在判斷，而不是找資料。", en: "Course, imaging and pathology are compiled, with missing items and discussion questions flagged, so meeting time goes to judgment rather than searching for data.", vi: "Tổng hợp diễn tiến bệnh, hình ảnh và giải phẫu bệnh, đánh dấu phần còn thiếu và câu hỏi cần thảo luận, để thời gian họp dành cho phán đoán thay vì tìm dữ liệu." } },
+          { t: { zh: "MDT 與實證支援", en: "MDT and evidence support", vi: "MDT và hỗ trợ bằng chứng" }, d: { zh: "記錄各專科意見與共同決定的照護計畫；PICO 問題整理與文獻來源呈現依產品版本提供，讓討論有依據可循。", en: "Each specialty's opinion and the jointly agreed care plan are recorded; PICO question framing and literature-source presentation are provided by product version, so discussion rests on evidence.", vi: "Ghi nhận ý kiến từng chuyên khoa và kế hoạch chăm sóc được quyết định chung; tổng hợp câu hỏi PICO và trình bày nguồn tài liệu được cung cấp theo phiên bản sản phẩm, để thảo luận có căn cứ." } },
+          { t: { zh: "照護任務與追蹤", en: "Care tasks and follow-up", vi: "Nhiệm vụ chăm sóc và theo dõi" }, d: { zh: "共同計畫拆解為執行分工，回報結果、安排再討論並設定追蹤節點，直到結案。", en: "The shared plan is broken into assigned tasks; results are reported, re-discussion scheduled and follow-up checkpoints set until closure.", vi: "Kế hoạch chung được chia thành phân công thực hiện; báo cáo kết quả, sắp xếp thảo luận lại và đặt các mốc theo dõi cho đến khi kết thúc." } }
         ],
         extra: [
-          { t: { zh: "建議的操作示範", en: "Suggested demonstration", vi: "Minh họa thao tác đề xuất" }, d: { zh: "使用合成病例，由一個會診需求一路展示到追蹤結案，清楚區分概念原型與實際產品畫面。", en: "Use a synthetic case to walk from one consultation request to follow-up closure, clearly separating concept prototype from actual product screens.", vi: "Dùng ca bệnh tổng hợp, trình diễn từ một yêu cầu hội chẩn đến theo dõi kết thúc, phân biệt rõ nguyên mẫu khái niệm và màn hình sản phẩm thực tế." } }
+          { t: { zh: "一條完整的流程", en: "One complete workflow", vi: "Một quy trình hoàn chỉnh" }, d: { zh: "以一個會診需求為起點：申請、分派、會前準備、多專科討論、共同計畫、任務執行到追蹤結案，每個節點都留下紀錄與負責人。", en: "Starting from one consultation request: request, assignment, preparation, multidisciplinary discussion, shared plan, task execution and follow-up closure, with a record and an owner at every step.", vi: "Bắt đầu từ một yêu cầu hội chẩn: yêu cầu, phân công, chuẩn bị, thảo luận đa chuyên khoa, kế hoạch chung, thực hiện nhiệm vụ đến theo dõi kết thúc; mỗi bước đều có ghi nhận và người phụ trách." } },
+          { t: { zh: "介接能力", en: "Integration capability", vi: "Khả năng tích hợp" }, d: { zh: "與 EMR Platform 共用病歷、影像與病理資訊；會前摘要可由 AI 輔助產生草稿，交由醫護確認後使用。", en: "Shares records, imaging and pathology with EMR Platform; pre-meeting summaries can be drafted by AI assistance and used after clinician confirmation.", vi: "Dùng chung bệnh án, hình ảnh và giải phẫu bệnh với EMR Platform; tóm tắt trước hội chẩn có thể do AI hỗ trợ soạn bản nháp và được sử dụng sau khi nhân viên y tế xác nhận." } }
         ]
       },
       { id: "native", num: "05", tag: "AI-NATIVE ARCHITECTURE", page: "solution-native-ai.html",
@@ -147,7 +211,29 @@ window.CONTENT = {
         position: { zh: "內建於系統的智慧架構", en: "Intelligence built into the system architecture", vi: "Kiến trúc thông minh tích hợp sẵn trong hệ thống" },
         desc: { zh: "從系統設計開始，將 AI 納入資料、使用情境與工作流程，統一規劃模型調用、授權、覆核與追溯。", en: "From system design onward, AI is built into data, use context and workflows, with unified planning of model invocation, authorization, review and traceability.", vi: "Ngay từ thiết kế hệ thống, đưa AI vào dữ liệu, bối cảnh sử dụng và quy trình; hoạch định thống nhất việc gọi mô hình, ủy quyền, rà soát và truy vết." },
         headline: { zh: "讓智慧能力成為系統的一部分。", en: "Make intelligence part of the system.", vi: "Để năng lực thông minh trở thành một phần của hệ thống." },
-        intro: { zh: "醫盾建議將「原生 AI」定位為系統架構能力：在設計資料、角色與工作流程時，同步納入 AI，而非事後僅外掛一個聊天介面。", en: "AegisMed positions native AI as an architecture capability: AI is designed in alongside data, roles and workflows, rather than bolted on later as a chat interface.", vi: "AegisMed định vị AI nguyên bản là năng lực kiến trúc: đưa AI vào ngay khi thiết kế dữ liệu, vai trò và quy trình, thay vì gắn thêm một giao diện chat sau này." },
+        intro: { zh: "原生 AI 是系統架構層的能力：在設計資料、角色與工作流程的同時納入 AI，而不是事後外掛一個聊天介面。模型調用、授權、人工覆核與稽核追溯在同一套架構中統一規劃。", en: "Native AI is a capability at the architecture level: AI is designed in together with data, roles and workflows rather than bolted on later as a chat interface. Model invocation, authorization, human review and audit traceability are planned within one architecture.", vi: "AI nguyên bản là năng lực ở tầng kiến trúc hệ thống: đưa AI vào ngay khi thiết kế dữ liệu, vai trò và quy trình, thay vì gắn thêm một giao diện chat sau này. Gọi mô hình, ủy quyền, rà soát bởi con người và truy vết kiểm toán được hoạch định thống nhất trong cùng một kiến trúc." },
+        figure: {
+          type: "stack",
+          label: { zh: "架構關係", en: "Architecture", vi: "Kiến trúc" },
+          rows: [
+            { label: { zh: "工作平台", en: "Work platforms", vi: "Nền tảng làm việc" }, cells: [
+              { zh: "智慧 HIS", en: "Smart HIS", vi: "HIS thông minh" },
+              { zh: "EMR Platform", en: "EMR Platform", vi: "EMR Platform" },
+              { zh: "Smart-ICU", en: "Smart-ICU", vi: "Smart-ICU" },
+              { zh: "Smart-MDT", en: "Smart-MDT", vi: "Smart-MDT" } ] },
+            { arrow: "↕", accent: true, label: { zh: "原生 AI 架構", en: "Native AI architecture", vi: "Kiến trúc AI nguyên bản" }, cells: [
+              { zh: "資料與情境", en: "Data and context", vi: "Dữ liệu và bối cảnh" },
+              { zh: "模型與工具調用", en: "Model and tool invocation", vi: "Gọi mô hình và công cụ" },
+              { zh: "角色權限", en: "Role permissions", vi: "Phân quyền vai trò" },
+              { zh: "人工覆核", en: "Human review", vi: "Rà soát bởi con người" },
+              { zh: "稽核追溯", en: "Audit traceability", vi: "Truy vết kiểm toán" } ] },
+            { arrow: "↕", label: { zh: "基礎", en: "Foundation", vi: "Nền tảng" }, cells: [
+              { zh: "成熟 HIS 核心", en: "Mature HIS core", vi: "Lõi HIS trưởng thành" },
+              { zh: "共同資料平台", en: "Shared data platform", vi: "Nền tảng dữ liệu chung" },
+              { zh: "院內系統與設備", en: "Hospital systems and devices", vi: "Hệ thống và thiết bị trong viện" } ] }
+          ],
+          foot: { zh: "AI 不可用時，保留人工處理與核心作業路徑", en: "When AI is unavailable, manual handling and core workflows remain", vi: "Khi AI không khả dụng vẫn giữ đường xử lý thủ công và nghiệp vụ lõi" }
+        },
         points: [
           { t: { zh: "資料與情境", en: "Data and context", vi: "Dữ liệu và bối cảnh" }, d: { zh: "將經授權的病人脈絡、使用者角色、工作任務與資料來源納入設計。", en: "Design in authorized patient context, user roles, tasks and data sources.", vi: "Đưa bối cảnh bệnh nhân đã được ủy quyền, vai trò người dùng, tác vụ và nguồn dữ liệu vào thiết kế." } },
           { t: { zh: "模型與工具調用", en: "Model and tool invocation", vi: "Gọi mô hình và công cụ" }, d: { zh: "依任務選用合適模型或工具，規劃版本管理、輸入輸出及責任邊界。", en: "Choose suitable models or tools per task; plan version management, inputs and outputs, and responsibility boundaries.", vi: "Chọn mô hình hoặc công cụ phù hợp theo tác vụ; hoạch định quản lý phiên bản, đầu vào đầu ra và ranh giới trách nhiệm." } },
@@ -164,7 +250,30 @@ window.CONTENT = {
         position: { zh: "臨床、護理與營運智慧支援", en: "Intelligent support for clinical, nursing and operations", vi: "Hỗ trợ thông minh cho lâm sàng, điều dưỡng và vận hành" },
         desc: { zh: "從病歷摘要、影像輔助與交班整理，到會診準備及營運分析，依任務導入可覆核、可追溯的 AI 支援。", en: "From record summaries, imaging support and handover notes to consultation preparation and operational analytics: reviewable, traceable AI support introduced task by task.", vi: "Từ tóm tắt bệnh án, hỗ trợ hình ảnh và bàn giao ca đến chuẩn bị hội chẩn và phân tích vận hành: đưa vào hỗ trợ AI có thể rà soát, truy vết theo từng tác vụ." },
         headline: { zh: "把智慧支援帶入實際工作。", en: "Bring intelligent support into real work.", vi: "Đưa hỗ trợ thông minh vào công việc thực tế." },
-        intro: { zh: "將 AI 依具體任務分開呈現，涵蓋臨床、護理、行政與營運。每項應用都須說清楚資料、輸出、覆核者與適用限制。", en: "AI is presented task by task across clinical, nursing, administrative and operational work. Each application must state its data, outputs, reviewer and limits.", vi: "Trình bày AI theo từng tác vụ cụ thể, bao gồm lâm sàng, điều dưỡng, hành chính và vận hành. Mỗi ứng dụng phải nói rõ dữ liệu, đầu ra, người rà soát và giới hạn áp dụng." },
+        intro: { zh: "AI 輔助依具體任務導入，涵蓋臨床、護理、會診與營運。每一項應用都說明使用的資料、產出的內容、負責覆核的人員與適用限制，讓 AI 支援實際工作，專業判斷仍由人負責。", en: "AI assistance is introduced task by task across clinical, nursing, consultation and operational work. Every application states the data it uses, what it produces, who reviews it and where it applies, so AI supports real work while professional judgment stays with people.", vi: "AI hỗ trợ được đưa vào theo từng tác vụ cụ thể, bao gồm lâm sàng, điều dưỡng, hội chẩn và vận hành. Mỗi ứng dụng đều nêu rõ dữ liệu sử dụng, nội dung tạo ra, người chịu trách nhiệm rà soát và giới hạn áp dụng, để AI hỗ trợ công việc thực tế còn phán đoán chuyên môn vẫn do con người đảm nhiệm." },
+        figure: {
+          type: "grid",
+          label: { zh: "任務範圍", en: "Task scope", vi: "Phạm vi tác vụ" },
+          groups: [
+            { t: { zh: "臨床支援", en: "Clinical support", vi: "Hỗ trợ lâm sàng" }, items: [
+              { zh: "病歷摘要", en: "Record summaries", vi: "Tóm tắt bệnh án" },
+              { zh: "影像輔助", en: "Imaging support", vi: "Hỗ trợ hình ảnh" },
+              { zh: "風險提示與實證檢索", en: "Risk alerts and evidence retrieval", vi: "Cảnh báo nguy cơ và tra cứu bằng chứng" } ] },
+            { t: { zh: "護理與照護", en: "Nursing and care", vi: "Điều dưỡng và chăm sóc" }, items: [
+              { zh: "交班資訊整理", en: "Handover summaries", vi: "Tổng hợp bàn giao ca" },
+              { zh: "照護紀錄草稿", en: "Care-record drafts", vi: "Bản nháp hồ sơ chăm sóc" },
+              { zh: "待辦彙整", en: "To-do compilation", vi: "Tổng hợp việc cần làm" } ] },
+            { t: { zh: "會診與多專科", en: "Consultation and MDT", vi: "Hội chẩn và đa chuyên khoa" }, items: [
+              { zh: "Pre-MDT 病程摘要", en: "Pre-MDT course summaries", vi: "Tóm tắt diễn tiến Pre-MDT" },
+              { zh: "問題整理", en: "Question lists", vi: "Tổng hợp câu hỏi" },
+              { zh: "資料缺件提醒", en: "Missing-data reminders", vi: "Nhắc dữ liệu thiếu" } ] },
+            { t: { zh: "行政與營運", en: "Administration and operations", vi: "Hành chính và vận hành" }, items: [
+              { zh: "行政文件草稿", en: "Administrative drafts", vi: "Bản nháp văn bản hành chính" },
+              { zh: "營運報表解讀", en: "Report interpretation", vi: "Diễn giải báo cáo vận hành" },
+              { zh: "資源需求分析", en: "Resource-demand analysis", vi: "Phân tích nhu cầu nguồn lực" } ] }
+          ],
+          foot: { zh: "每項任務：資料來源 → AI 草稿 → 專業覆核 → 紀錄與追溯", en: "Every task: data source → AI draft → professional review → record and traceability", vi: "Mỗi tác vụ: nguồn dữ liệu → bản nháp AI → rà soát chuyên môn → ghi nhận và truy vết" }
+        },
         points: [
           { t: { zh: "臨床支援", en: "Clinical support", vi: "Hỗ trợ lâm sàng" }, d: { zh: "病歷摘要、文書草稿、影像輔助、風險提示與實證檢索；使用範圍依個別產品確認。", en: "Record summaries, document drafts, imaging support, risk alerts and evidence retrieval; scope confirmed per product.", vi: "Tóm tắt bệnh án, bản nháp văn bản, hỗ trợ hình ảnh, cảnh báo nguy cơ và tra cứu bằng chứng; phạm vi xác nhận theo từng sản phẩm." } },
           { t: { zh: "護理與照護", en: "Nursing and care", vi: "Điều dưỡng và chăm sóc" }, d: { zh: "交班資訊整理、照護紀錄草稿與待辦彙整；由負責人確認後進入工作流程。", en: "Handover summaries, care-record drafts and to-do compilation; enters the workflow after confirmation by the responsible person.", vi: "Tổng hợp thông tin bàn giao, bản nháp hồ sơ chăm sóc và việc cần làm; vào quy trình sau khi người phụ trách xác nhận." } },
@@ -172,7 +281,7 @@ window.CONTENT = {
           { t: { zh: "行政與營運", en: "Administration and operations", vi: "Hành chính và vận hành" }, d: { zh: "行政文件草稿、營運報表解讀及資源需求分析；以可取得資料與核定功能為前提。", en: "Administrative drafts, operational report interpretation and resource-demand analysis; based on available data and approved functions.", vi: "Bản nháp văn bản hành chính, diễn giải báo cáo vận hành và phân tích nhu cầu nguồn lực; dựa trên dữ liệu có sẵn và tính năng đã duyệt." } }
         ],
         extra: [
-          { t: { zh: "每項應用都要有的說明", en: "What every application must state", vi: "Mỗi ứng dụng phải nêu rõ" }, d: { zh: "任務與使用者、提供者及產品版本、輸入輸出、適用場景與驗證、人工覆核及紀錄，以及產品與地區的使用限制。", en: "Task and users, provider and product version, inputs and outputs, applicable settings and validation, human review and records, and product or regional usage limits.", vi: "Tác vụ và người dùng, nhà cung cấp và phiên bản sản phẩm, đầu vào đầu ra, bối cảnh áp dụng và kiểm chứng, rà soát bởi con người và ghi nhận, cùng giới hạn sử dụng theo sản phẩm và khu vực." } },
+          { t: { zh: "每項應用的透明說明", en: "Transparency for every application", vi: "Minh bạch cho mỗi ứng dụng" }, d: { zh: "每項 AI 輔助應用都載明任務與使用者、提供者與產品版本、輸入與輸出、適用場景與驗證方式、人工覆核與紀錄機制，以及產品與地區的使用限制。", en: "Every AI-assistance application documents its task and users, provider and product version, inputs and outputs, applicable settings and validation, human review and record-keeping, and product or regional usage limits.", vi: "Mỗi ứng dụng AI hỗ trợ đều ghi rõ tác vụ và người dùng, nhà cung cấp và phiên bản sản phẩm, đầu vào và đầu ra, bối cảnh áp dụng và phương pháp kiểm chứng, cơ chế rà soát bởi con người và ghi nhận, cùng giới hạn sử dụng theo sản phẩm và khu vực." } },
           { t: { zh: "與原生 AI 的關係", en: "Relationship to native AI", vi: "Quan hệ với AI nguyên bản" }, d: { zh: "AI 輔助可以整合於既有系統，也可以由原生 AI 架構提供。原生是架構整合方式；輔助是 AI 的工作角色，並不是兩種互斥的模型。", en: "AI assistance can be integrated into existing systems or provided through the native AI architecture. Native is the way of integrating; assistance is AI's working role. They are not two mutually exclusive models.", vi: "AI hỗ trợ có thể tích hợp vào hệ thống hiện có hoặc do kiến trúc AI nguyên bản cung cấp. Nguyên bản là cách tích hợp kiến trúc; hỗ trợ là vai trò làm việc của AI, không phải hai mô hình loại trừ nhau." } }
         ]
       }
