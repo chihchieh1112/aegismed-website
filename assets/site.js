@@ -108,23 +108,15 @@
     if (h && !h.innerHTML.trim()) h.innerHTML = HEADER_HTML;
     const f = document.querySelector("footer.site-footer");
     if (f && !f.innerHTML.trim()) f.innerHTML = FOOTER_HTML;
-    /* 右下角固定按鈕：內頁＝回到首頁，首頁＝回到頂端 */
-    const here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-    const isHome = here === "index.html";
+    /* 右下角固定按鈕：所有頁面都是「回到頂端」，捲動超過 600px 才顯示 */
     const fab = document.createElement("a");
-    fab.className = "fab-home" + (isHome ? " fab-top" : "");
-    fab.href = isHome ? "#top" : "index.html";
-    fab.innerHTML = (isHome
-      ? '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span data-i18n="fab.top">回到頂端</span>'
-      : '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span data-i18n="fab.home">回到首頁</span>');
+    fab.className = "fab-home fab-top";
+    fab.href = "#top";
+    fab.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span data-i18n="fab.top">回到頂端</span>';
     document.body.appendChild(fab);
-    if (isHome) {
-      fab.addEventListener("click", (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); });
-      const toggle = () => fab.classList.toggle("show", window.scrollY > 600);
-      window.addEventListener("scroll", toggle, { passive: true }); toggle();
-    } else {
-      fab.classList.add("show");
-    }
+    fab.addEventListener("click", (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+    const toggle = () => fab.classList.toggle("show", window.scrollY > 600);
+    window.addEventListener("scroll", toggle, { passive: true }); toggle();
   }
 
   /* ---------- 導覽列 ---------- */
