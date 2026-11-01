@@ -551,7 +551,6 @@ window.CONTENT = {
       exchange: { zh: "合作交流", en: "Cooperation exchange", vi: "Giao lưu hợp tác" }
     },
     pending: { zh: "此類別的公開素材核定中，核定後發布。", en: "Public material for this category is under review and will be published after approval.", vi: "Tài liệu công khai của nhóm này đang được phê duyệt và sẽ công bố sau khi duyệt." },
-    exchangeIntro: { zh: "2025 年 9 月至 2026 年 6 月，台灣與越南的智慧醫療合作交流紀錄：醫院考察、合作備忘錄簽署與雙向參訪。", en: "September 2025 to June 2026: records of smart-healthcare cooperation between Taiwan and Vietnam, including hospital visits, MOU signings and reciprocal study visits.", vi: "Từ tháng 9/2025 đến tháng 6/2026: hồ sơ giao lưu hợp tác y tế thông minh giữa Đài Loan và Việt Nam, gồm khảo sát bệnh viện, ký kết MOU và tham quan học tập hai chiều." },
     fields: {
       background: { zh: "背景與範圍", en: "Background and scope", vi: "Bối cảnh và phạm vi" },
       result: { zh: "結果與依據", en: "Result and basis", vi: "Kết quả và căn cứ" },

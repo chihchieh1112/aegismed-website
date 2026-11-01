@@ -593,7 +593,7 @@
           }).join("")}</div>
         </section>`;
       }).join("");
-      return `<p class="lead" style="margin-bottom:36px">${esc(L(K.exchangeIntro))}</p>${phases}${institutions}
+      return `${phases}${institutions}
         <div class="lightbox" role="dialog" aria-modal="true"><button type="button" class="close" aria-label="Close">×</button><button type="button" class="prev" aria-label="Previous">‹</button><img alt=""><div class="cap"></div><button type="button" class="next" aria-label="Next">›</button></div>`;
     };
     const render = () => {
