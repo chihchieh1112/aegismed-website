@@ -544,7 +544,7 @@ window.CONTENT = {
   cases: {
     eyebrow: { zh: "公司案例", en: "Cases", vi: "Trường hợp hợp tác" },
     title: { zh: "讓每個案例都能回答：做了什麼，做到哪裡，如何知道。", en: "Every case answers: what was done, how far it got, and how we know.", vi: "Mỗi trường hợp đều trả lời: đã làm gì, đến đâu, và biết bằng cách nào." },
-    lead: { zh: "依證據分為三類。未有核定公開素材的版位先隱藏，不使用虛構案例填補；領導者個人經驗另置於關於頁，不列為公司交付實績。", en: "Cases are grouped into three types by evidence. Slots without approved public material stay hidden rather than filled with fictional cases; the leadership's personal experience sits on the About page and is not counted as company deliveries.", vi: "Phân thành ba loại theo bằng chứng. Vị trí chưa có tài liệu công khai được duyệt sẽ ẩn, không dùng trường hợp hư cấu để lấp; kinh nghiệm cá nhân của lãnh đạo đặt ở trang Giới thiệu, không tính là thành tích bàn giao của công ty." },
+    lead: { zh: "每個案例都說明背景與範圍、結果與依據，不以未核定的功能或數字填補。", en: "Every case states its background and scope, and the results and evidence behind it; nothing is filled in with unapproved functions or figures.", vi: "Mỗi trường hợp đều nêu rõ bối cảnh, phạm vi, kết quả và căn cứ; không điền bằng tính năng hoặc con số chưa được phê duyệt." },
     tabs: {
       live: { zh: "已上線案例", en: "Live cases", vi: "Đã vận hành" },
       pilot: { zh: "試點／建置中", en: "Pilot / in progress", vi: "Thí điểm / đang xây dựng" },

@@ -6,7 +6,7 @@
   "use strict";
 
   /* 草稿階段顯示「待補」標記；正式上線前改成 false */
-  const SHOW_PLACEHOLDER_MARKS = true;
+  const SHOW_PLACEHOLDER_MARKS = false;
 
   const D = window.SITE_DATA || {};
   const C = window.CONTENT || {};
@@ -556,7 +556,8 @@
   const EXCL = new Set(D.excludePhotos || []);
   R["cases"] = (el) => {
     const K = C.cases;
-    const tabs = [["live", K.tabs.live], ["pilot", K.tabs.pilot], ["exchange", K.tabs.exchange]];
+    /* 2026-11-01 使用者指示：先只保留「合作交流」；日後要加回時改為 [["live", K.tabs.live], ["pilot", K.tabs.pilot], ["exchange", K.tabs.exchange]] */
+    const tabs = [["exchange", K.tabs.exchange]];
     const institutions = `<div class="section-head" style="margin-top:56px"><h2 style="font-size:1.3rem">${lang === "zh" ? "合作交流網絡" : (lang === "vi" ? "Mạng lưới giao lưu hợp tác" : "Cooperation network")}</h2></div><div class="grid grid-2" data-render="partners"></div>`;
     const exchange = () => {
       flat = [];
@@ -584,7 +585,7 @@
                 <div class="place">${PIN}${esc(L(e.place))}</div>
                 <div class="case-fields">
                   <div><b>${esc(L(K.fields.background))}</b><span>${esc(L(e.desc))}</span></div>
-                  <div class="links"><b>${esc(L(K.fields.result))}</b><span>${files.length} ${esc(L(K.resultPhotos))}</span>${news}</div>
+                  ${files.length ? `<div class="links"><b>${esc(L(K.fields.result))}</b><span>${files.length} ${esc(L(K.resultPhotos))}</span>${news}</div>` : ""}
                 </div>
               </div>
               <div class="photo-strip">${strip}</div>
@@ -602,8 +603,9 @@
       panel.querySelectorAll("[data-render]").forEach((x) => { const fn = R[x.dataset.render]; if (fn) fn(x); });
       initLightbox(panel);
     };
-    el.innerHTML = `<div class="tabs">${tabs.map(([id, t]) => `<button type="button" data-id="${id}">${esc(L(t))}</button>`).join("")}</div><div class="case-panel"></div>`;
-    el.querySelector(".tabs").addEventListener("click", (e) => { const b = e.target.closest("button[data-id]"); if (!b) return; state.caseTab = b.dataset.id; render(); });
+    const tabBar = tabs.length > 1 ? `<div class="tabs">${tabs.map(([id, t]) => `<button type="button" data-id="${id}">${esc(L(t))}</button>`).join("")}</div>` : "";
+    el.innerHTML = `${tabBar}<div class="case-panel"></div>`;
+    if (tabs.length > 1) el.querySelector(".tabs").addEventListener("click", (e) => { const b = e.target.closest("button[data-id]"); if (!b) return; state.caseTab = b.dataset.id; render(); });
     render();
     if (location.hash) { const t = document.querySelector(location.hash); if (t) setTimeout(() => t.scrollIntoView({ behavior: "smooth", block: "start" }), 80); }
   };
