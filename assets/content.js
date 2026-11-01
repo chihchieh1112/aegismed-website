@@ -542,9 +542,9 @@ window.CONTENT = {
 
   /* ---------- 公司案例頁 ---------- */
   cases: {
-    eyebrow: { zh: "公司案例", en: "Cases", vi: "Trường hợp hợp tác" },
-    title: { zh: "讓每個案例都能回答：做了什麼，做到哪裡，如何知道。", en: "Every case answers: what was done, how far it got, and how we know.", vi: "Mỗi trường hợp đều trả lời: đã làm gì, đến đâu, và biết bằng cách nào." },
-    lead: { zh: "每個案例都說明背景與範圍、結果與依據，不以未核定的功能或數字填補。", en: "Every case states its background and scope, and the results and evidence behind it; nothing is filled in with unapproved functions or figures.", vi: "Mỗi trường hợp đều nêu rõ bối cảnh, phạm vi, kết quả và căn cứ; không điền bằng tính năng hoặc con số chưa được phê duyệt." },
+    eyebrow: { zh: "公司成果", en: "Our work", vi: "Thành quả hợp tác" },
+    title: { zh: "過去與各家醫院的合作案例。", en: "Our cooperation cases with hospitals.", vi: "Các trường hợp hợp tác với bệnh viện." },
+    lead: { zh: "AegisMed AI 與醫院合作推動智慧醫院的紀錄，依時間整理，持續更新。", en: "A record of AegisMed AI's smart-hospital cooperation with hospitals, listed in order of time and updated as new work is completed.", vi: "Ghi nhận các hợp tác bệnh viện thông minh của AegisMed AI với các bệnh viện, sắp xếp theo thời gian và được cập nhật liên tục." },
     tabs: {
       live: { zh: "已上線案例", en: "Live cases", vi: "Đã vận hành" },
       pilot: { zh: "試點／建置中", en: "Pilot / in progress", vi: "Thí điểm / đang xây dựng" },
