@@ -1,5 +1,5 @@
 /* ============================================================
-   醫盾 AegisMed AI co. 官網 — 共用腳本（v2 六大方案版）
+   AegisMed AI 官網 — 共用腳本（v2 六大方案版）
    功能：頁首頁尾注入、三語切換、依 content.js / data.js 產生各頁內容、燈箱、表單
    ============================================================ */
 (function () {
@@ -42,10 +42,10 @@
   /* ---------- 頁首與頁尾（所有頁面共用，只需在此修改一次） ---------- */
   const HEADER_HTML = `
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="AegisMed AI co. 醫盾人工智慧">
+      <a class="brand" href="index.html" aria-label="AegisMed AI 醫盾人工智慧">
         <img src="assets/img/icon.svg?v=3" alt="" width="200" height="210">
         <span class="brand-text">
-          <span class="brand-en">AegisMed <b>AI</b> <small>co.</small></span>
+          <span class="brand-en">AegisMed <b>AI</b></span>
           <span class="brand-zh">醫盾人工智慧</span>
         </span>
       </a>
@@ -56,7 +56,7 @@
         <li><a href="cooperation.html" data-i18n="nav.cooperation">導入與合作</a></li>
         <li><a href="cases.html" data-i18n="nav.cases">公司案例</a></li>
         <li><a href="news.html" data-i18n="nav.news">洞察與動態</a></li>
-        <li><a href="about.html" data-i18n="nav.about">關於醫盾</a></li>
+        <li><a href="about.html" data-i18n="nav.about">關於我們</a></li>
         <li><a href="contact.html" class="nav-cta" data-i18n="nav.contact">聯絡我們</a></li>
       </ul>
       <div class="nav-right">
@@ -69,10 +69,10 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a class="brand" href="index.html" aria-label="AegisMed AI co. 醫盾人工智慧">
-            <img src="assets/img/logo-dark.svg?v=3" alt="AegisMed AI co. 醫盾人工智慧" width="740" height="230">
+          <a class="brand" href="index.html" aria-label="AegisMed AI 醫盾人工智慧">
+            <img src="assets/img/logo-dark.svg?v=3" alt="AegisMed AI 醫盾人工智慧" width="740" height="230">
           </a>
-          <p class="small" data-i18n="footer.about">醫盾 AegisMed AI co. 聚焦新一代智慧化 HIS 轉換、臨床工作平台、原生 AI 與 AI 輔助，說清楚服務方式與合作邊界。</p>
+          <p class="small" data-i18n="footer.about">AegisMed AI 聚焦新一代智慧化 HIS 轉換、臨床工作平台、原生 AI 與 AI 輔助，說清楚服務方式與合作邊界。</p>
         </div>
         <div>
           <h4 data-i18n="footer.links">網站導覽</h4>
@@ -81,7 +81,7 @@
             <li><a href="cooperation.html" data-i18n="nav.cooperation">導入與合作</a></li>
             <li><a href="cases.html" data-i18n="nav.cases">公司案例</a></li>
             <li><a href="news.html" data-i18n="nav.news">洞察與動態</a></li>
-            <li><a href="about.html" data-i18n="nav.about">關於醫盾</a></li>
+            <li><a href="about.html" data-i18n="nav.about">關於我們</a></li>
           </ul>
         </div>
         <div>
@@ -91,14 +91,12 @@
         <div>
           <h4 data-i18n="footer.contact">聯絡我們</h4>
           <ul>
-            <li data-render="company-email" data-placeholder></li>
-            <li data-render="company-phone" data-placeholder></li>
-            <li data-render="company-address" data-placeholder></li>
+            <li data-render="company-email"></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span data-render="year"></span> <span data-render="company-fullname">醫盾人工智慧股份有限公司</span> AegisMed AI co. <span data-i18n="footer.rights">版權所有</span></span>
+        <span>© <span data-render="year"></span> AegisMed AI · <span data-render="company-legal">醫盾人工智慧股份有限公司（AegisMed AI co.）</span> <span data-i18n="footer.rights">版權所有</span></span>
         <span><a href="privacy.html#privacy" data-i18n="footer.privacy">隱私政策</a><a href="privacy.html#cookie" data-i18n="footer.cookie">Cookie</a><a href="privacy.html#terms" data-i18n="footer.terms">網站使用說明</a></span>
       </div>
     </div>`;
@@ -168,8 +166,7 @@
   R["year"] = (el) => { el.textContent = new Date().getFullYear(); };
   R["company-fullname"] = (el) => { el.textContent = L(D.company.fullName); };
   R["company-email"] = (el) => { el.innerHTML = `<a href="mailto:${esc(D.company.email)}">${esc(D.company.email)}</a>`; };
-  R["company-phone"] = (el) => { el.textContent = D.company.phone; };
-  R["company-address"] = (el) => { el.textContent = L(D.company.address); };
+  R["company-legal"] = (el) => { el.textContent = L(D.company.legal); };
   R["footer-solutions"] = (el) => { el.innerHTML = C.solutions.items.map((s) => `<li><a href="${s.page}">${esc(L(s.name))}</a></li>`).join(""); };
   R["contact-title"] = (el) => { el.textContent = L(C.contact.title); };
   R["contact-lead"] = (el) => { el.textContent = L(C.contact.lead); };
@@ -437,7 +434,7 @@
 
   R["company-facts"] = (el) => {
     const f = (k, zhL, zhV, ph) => `<div class="fact" ${ph ? "data-placeholder" : ""}><b>${zhOr("about.company." + k, zhL)}</b><span>${zhOr("about.company." + k + "Value", zhV)}</span></div>`;
-    el.innerHTML = `${sectionHead(C.about.companyTitle, L(D.company.fullName), null)}<div class="facts">${f("legal", "法定名稱", "醫盾人工智慧股份有限公司 AegisMed AI co.", false)}${f("founded", "成立年份", "待補", true)}${f("hq", "總部", "台北市（地址待補）", true)}${f("regions", "服務地區", "台灣、越南", false)}</div>`;
+    el.innerHTML = `${sectionHead(C.about.companyTitle, L(D.company.fullName), null)}<div class="facts">${f("legal", "法定名稱", L(D.company.legal), false)}<div class="fact"><b>Email</b><span><a href="mailto:${esc(D.company.email)}">${esc(D.company.email)}</a></span></div>${f("regions", "服務地區", "台灣、越南", false)}</div>`;
   };
 
   R["partners"] = (el) => {
@@ -464,13 +461,18 @@
         <div class="field"><label for="f-topic">${esc(L(f.topic))}</label>
           <select id="f-topic" name="topic"><option value="">${esc(L(f.topicPlaceholder))}</option>${c.topics.map((t, i) => `<option ${String(i) === pre ? "selected" : ""}>${esc(L(t))}</option>`).join("")}</select></div>
         <div class="field"><label for="f-need">${esc(L(f.need))}</label><textarea id="f-need" name="message" rows="6" required></textarea></div>
-        <button class="btn btn-primary" type="submit">${esc(L(c.submit))} ${ARROW}</button>
+        <label class="consent"><input type="checkbox" id="f-consent" name="consent"><span>${esc(L(c.consent))} <a href="privacy.html" target="_blank" rel="noopener">${esc(L(c.consentLink))}</a></span></label>
+        <p class="consent-warn" hidden>${esc(L(c.consentRequired))}</p>
+        <button class="btn btn-primary" type="submit" disabled>${esc(L(c.submit))} ${ARROW}</button>
         <p class="form-note">${esc(L(c.formNote))}</p>
       </form>`;
+    const consent = el.querySelector("#f-consent"), warn = el.querySelector(".consent-warn"), sendBtn = el.querySelector('button[type="submit"]');
+    consent.addEventListener("change", () => { sendBtn.disabled = !consent.checked; warn.hidden = consent.checked; });
     el.querySelector("form").addEventListener("submit", (e) => {
       e.preventDefault();
+      if (!consent.checked) { warn.hidden = false; consent.focus(); return; }
       const v = (n) => (el.querySelector(`[name="${n}"]`) || {}).value || "";
-      const subject = encodeURIComponent(`[AegisMed AI co.] ${v("topic") || "合作洽詢"} - ${v("org")}`);
+      const subject = encodeURIComponent(`[AegisMed AI] ${v("topic") || "合作洽詢"} - ${v("org")}`);
       const body = encodeURIComponent(`${v("name")}\n${v("org")} / ${v("country")}\n${v("email")}\n\n${v("message")}`);
       location.href = `mailto:${D.company.email}?subject=${subject}&body=${body}`;
     });
@@ -499,7 +501,7 @@
   R["solution"] = (el) => {
     const s = solutionById(el.dataset.id); if (!s) return;
     const S = C.solutions;
-    document.title = `${L(s.name)}｜${lang === "zh" ? "醫盾 " : ""}AegisMed AI co.`;
+    document.title = `${L(s.name)}｜AegisMed AI`;
     el.innerHTML = `
       <section class="page-hero"><div class="container">
         <div class="num">${s.num} · ${esc(s.tag)}</div>
@@ -524,11 +526,29 @@
       </div></section>`;
   };
 
+  /* 關於頁：品牌與願景（標誌設計理念） */
+  R["brand-story"] = (el) => {
+    const b = C.about.brand; if (!b) return;
+    el.innerHTML = `
+      <div class="brand-grid">
+        <div class="brand-mark">
+          <img src="assets/img/icon.svg?v=3" alt="AegisMed AI" width="200" height="210">
+          <div class="vision"><div class="eyebrow">${esc(L(b.visionLabel))}</div><p>${esc(L(b.vision))}</p></div>
+        </div>
+        <div>
+          <div class="eyebrow">${esc(L(b.eyebrow))}</div>
+          <h2>${esc(L(b.title))}</h2>
+          <p class="lead">${esc(L(b.lead))}</p>
+          <div class="brand-elements">${b.elements.map((x, i) => `<div class="brand-el"><span class="n">${i + 1}</span><div><h3>${esc(L(x.t))}</h3><p>${esc(L(x.d))}</p></div></div>`).join("")}</div>
+        </div>
+      </div>`;
+  };
+
   /* 隱私政策等 */
   R["privacy"] = (el) => {
     const ids = ["privacy", "cookie", "terms", "ip"];
     el.innerHTML = C.privacy.sections.map((s, i) => `<section class="section" id="${ids[i]}" style="padding:36px 0"><div class="container" style="max-width:860px"><h2 style="font-size:1.4rem">${esc(L(s.t))}</h2><p>${esc(L(s.d))}</p></div></section>`).join("") +
-      `<div class="container" style="max-width:860px"><p class="note" data-placeholder>${esc(L(C.privacy.lead))}</p></div>`;
+      `<div class="container" style="max-width:860px"><p class="note">${esc(L(C.privacy.lead))}</p></div>`;
   };
 
   /* ---------- 公司案例：合作交流 ---------- */
@@ -564,9 +584,7 @@
                 <div class="place">${PIN}${esc(L(e.place))}</div>
                 <div class="case-fields">
                   <div><b>${esc(L(K.fields.background))}</b><span>${esc(L(e.desc))}</span></div>
-                  <div><b>${esc(L(K.fields.role))}</b><span>${esc(L(e.mou ? K.roleMou : K.roleText))}</span></div>
                   <div class="links"><b>${esc(L(K.fields.result))}</b><span>${files.length} ${esc(L(K.resultPhotos))}</span>${news}</div>
-                  <div><b>${esc(L(K.fields.permission))}</b><span>${esc(L(K.permissionText))}</span></div>
                 </div>
               </div>
               <div class="photo-strip">${strip}</div>

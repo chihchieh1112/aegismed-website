@@ -5,15 +5,13 @@
    ============================================================ */
 window.SITE_DATA = {
 
-  /* ---------- 公司基本資料（佔位，待補） ---------- */
+  /* ---------- 公司基本資料（2026-11-01 定稿：公開 Email 與所在地，不公開電話與完整地址） ---------- */
   company: {
-    name: { zh: "醫盾", en: "AegisMed AI co.", vi: "AegisMed AI co." },
+    name: { zh: "AegisMed AI", en: "AegisMed AI", vi: "AegisMed AI" },
     fullName: { zh: "醫盾人工智慧股份有限公司", en: "AegisMed AI co.", vi: "AegisMed AI co." },
+    legal: { zh: "醫盾人工智慧股份有限公司（AegisMed AI co.）", en: "AegisMed AI co. (醫盾人工智慧股份有限公司)", vi: "AegisMed AI co. (醫盾人工智慧股份有限公司)" },
     tagline: { zh: "從 HIS 升級，邁向 AI 原生的智慧醫院。", en: "From HIS upgrade to the AI-native smart hospital.", vi: "Từ nâng cấp HIS đến bệnh viện thông minh AI-native." },
-    email: "contact@example.com",
-    phone: "+886-2-0000-0000",
-    address: { zh: "台北市（地址待補）", en: "Taipei, Taiwan (address to be confirmed)", vi: "Đài Bắc, Đài Loan (địa chỉ sẽ cập nhật)" },
-    videoUrl: "https://drive.google.com/file/d/1nBwjhi7T4c_Fplk3-6ogJo2Nlpz9KW42/view?usp=sharing"
+    email: "info.aegismed@gmail.com",
   },
 
   /* ---------- 解決方案 ---------- */
@@ -110,9 +108,9 @@ window.SITE_DATA = {
         vi: "Từ chuẩn hóa dữ liệu đến mô hình AI: xây dựng đội ngũ dữ liệu của chính bệnh viện."
       },
       desc: {
-        zh: "以 OHDSI 共通資料模型（OMOP CDM）為基礎，提供醫療資料標準化、資料治理、觀察性研究與 AI 模型開發的系統化培訓，結合台灣健保資料庫與醫學中心的實務經驗，讓合作醫院的數據真正產生臨床與管理價值。",
-        en: "Built on the OHDSI common data model (OMOP CDM), our programs cover data standardization, governance, observational research and AI model development, drawing on Taiwan's National Health Insurance database and medical-center experience so partner hospitals can turn their data into clinical and managerial value.",
-        vi: "Dựa trên mô hình dữ liệu chung OHDSI (OMOP CDM), chương trình bao gồm chuẩn hóa dữ liệu y tế, quản trị dữ liệu, nghiên cứu quan sát và phát triển mô hình AI, kết hợp kinh nghiệm từ cơ sở dữ liệu Bảo hiểm Y tế Quốc gia Đài Loan và các trung tâm y khoa, giúp dữ liệu của bệnh viện đối tác tạo ra giá trị lâm sàng và quản lý thực sự."
+        zh: "以國際共通資料模型（OMOP CDM）為基礎，提供醫療資料標準化、資料治理、觀察性研究與 AI 模型開發的系統化培訓，結合台灣健保資料庫與醫學中心的實務經驗，讓合作醫院的數據真正產生臨床與管理價值。",
+        en: "Built on the OMOP common data model (OMOP CDM), our programs cover data standardization, governance, observational research and AI model development, drawing on Taiwan's National Health Insurance database and medical-center experience so partner hospitals can turn their data into clinical and managerial value.",
+        vi: "Dựa trên mô hình dữ liệu chung OMOP (OMOP CDM), chương trình bao gồm chuẩn hóa dữ liệu y tế, quản trị dữ liệu, nghiên cứu quan sát và phát triển mô hình AI, kết hợp kinh nghiệm từ cơ sở dữ liệu Bảo hiểm Y tế Quốc gia Đài Loan và các trung tâm y khoa, giúp dữ liệu của bệnh viện đối tác tạo ra giá trị lâm sàng và quản lý thực sự."
       },
       features: [
         { zh: "OMOP CDM 資料轉換與品質檢核工作坊", en: "OMOP CDM conversion and data-quality workshops", vi: "Hội thảo chuyển đổi dữ liệu sang OMOP CDM và kiểm tra chất lượng dữ liệu" },
@@ -132,7 +130,7 @@ window.SITE_DATA = {
   phases: [
     { id: "p1", period: "2025.09 – 2025.10",
       title: { zh: "台灣專家團赴越南考察", en: "Taiwan expert delegation to Vietnam", vi: "Đoàn chuyên gia Đài Loan khảo sát tại Việt Nam" },
-      summary: { zh: "從衛生部、副總理到五家指標醫院，建立國家級合作的起點。", en: "From the Ministry of Health and the Deputy Prime Minister to five leading hospitals: the starting point of a national-level partnership.", vi: "Từ Bộ Y tế, Phó Thủ tướng đến năm bệnh viện đầu ngành: khởi đầu cho hợp tác cấp quốc gia." } },
+      summary: { zh: "從衛生主管機關到五家指標醫院，建立台越合作的起點。", en: "From the health authorities to five leading hospitals: the starting point of the Taiwan–Vietnam partnership.", vi: "Từ cơ quan quản lý y tế đến năm bệnh viện đầu ngành: khởi đầu cho hợp tác Việt Nam – Đài Loan." } },
     { id: "p2", period: "2026.01",
       title: { zh: "越南醫療代表團訪台", en: "Vietnamese medical delegation visits Taiwan", vi: "Đoàn y tế Việt Nam thăm Đài Loan" },
       summary: { zh: "越南衛生部與指標醫院組團來台，走訪健保署、衛福部與四家醫學中心。", en: "The Ministry of Health and leading hospitals toured the NHIA, the MOHW and four medical centers in Taiwan.", vi: "Bộ Y tế và các bệnh viện đầu ngành Việt Nam thăm Cục Bảo hiểm Y tế, Bộ Y tế và Phúc lợi cùng bốn trung tâm y khoa Đài Loan." } },
@@ -151,7 +149,7 @@ window.SITE_DATA = {
       place: { zh: "台灣", en: "Taiwan", vi: "Đài Loan" },
       desc: { zh: "邀請台灣資深醫療專家分享智慧醫療與健保數據經驗，製作合作啟動的對外影片。", en: "Senior Taiwanese healthcare experts shared their experience in smart healthcare and health-insurance data for the partnership's launch video.", vi: "Mời các chuyên gia y tế kỳ cựu Đài Loan chia sẻ kinh nghiệm về y tế thông minh và dữ liệu bảo hiểm y tế để thực hiện video khởi động hợp tác." } },
     { id: "e02", phase: "p1", date: "2025-09-29", slides: [3], featured: false, news: [10],
-      title: { zh: "拜會越南衛生部陳文順副部長", en: "Meeting with Deputy Minister of Health Trần Văn Thuấn", vi: "Chào xã giao Thứ trưởng Bộ Y tế Trần Văn Thuấn" },
+      title: { zh: "拜會越南衛生部", en: "Meeting with the Ministry of Health, Vietnam", vi: "Làm việc với Bộ Y tế Việt Nam" },
       place: { zh: "河內", en: "Hanoi", vi: "Hà Nội" },
       desc: { zh: "向越南衛生部說明台越智慧醫院合作構想，取得主管機關支持。", en: "Presented the Taiwan–Vietnam smart-hospital initiative to the Ministry of Health and secured its support.", vi: "Trình bày sáng kiến hợp tác bệnh viện thông minh Việt Nam – Đài Loan với Bộ Y tế và nhận được sự ủng hộ." } },
     { id: "e03", phase: "p1", date: "2025-09-29", slides: [4], featured: false, news: [10],
@@ -162,8 +160,8 @@ window.SITE_DATA = {
       title: { zh: "考察興安省綜合醫院", en: "Site visit to Hưng Yên Provincial General Hospital", vi: "Khảo sát Bệnh viện Đa khoa tỉnh Hưng Yên" },
       place: { zh: "興安省", en: "Hưng Yên Province", vi: "Tỉnh Hưng Yên" },
       desc: { zh: "了解省級醫院的病歷管理與資訊化現況，評估智慧醫院導入需求。", en: "Reviewed medical-record management and digitalization at a provincial hospital to assess smart-hospital needs.", vi: "Tìm hiểu hiện trạng quản lý hồ sơ bệnh án và tin học hóa tại bệnh viện tuyến tỉnh để đánh giá nhu cầu triển khai bệnh viện thông minh." } },
-    { id: "e05", phase: "p1", date: "2025-09-30", slides: [6], featured: true, news: [10],
-      title: { zh: "拜會越南政府黎成龍副總理", en: "Meeting with Deputy Prime Minister Lê Thành Long", vi: "Chào xã giao Phó Thủ tướng Chính phủ Lê Thành Long" },
+    { id: "e05", phase: "p1", date: "2025-09-30", slides: [6], featured: false, news: [10],
+      title: { zh: "拜會越南政府", en: "Meeting with the Government of Vietnam", vi: "Làm việc với Chính phủ Việt Nam" },
       place: { zh: "河內", en: "Hanoi", vi: "Hà Nội" },
       desc: { zh: "在政府層級確認推動智慧醫療合作的方向與支持。", en: "Confirmed government-level direction and support for the smart-healthcare partnership.", vi: "Khẳng định định hướng và sự ủng hộ ở cấp Chính phủ đối với hợp tác y tế thông minh." } },
     { id: "e06", phase: "p1", date: "2025-10-01", slides: [7], featured: false, news: [10],
@@ -219,7 +217,7 @@ window.SITE_DATA = {
     { id: "e18", phase: "p3", date: "2026-03-25", slides: [20], featured: true, news: [1, 2], mou: true,
       title: { zh: "與國家兒童醫院簽署合作備忘錄", en: "MOU signed with Vietnam National Children's Hospital", vi: "Ký kết Biên bản ghi nhớ với Bệnh viện Nhi Trung ương" },
       place: { zh: "河內", en: "Hanoi", vi: "Hà Nội" },
-      desc: { zh: "連結全球醫療數據網絡（OHDSI），推動兒童智慧醫院建設。", en: "Connecting to the global OHDSI data network and building a smart children's hospital.", vi: "Kết nối mạng lưới dữ liệu y tế toàn cầu OHDSI và xây dựng bệnh viện nhi thông minh." } },
+      desc: { zh: "連結國際醫療數據網絡，推動兒童智慧醫院建設。", en: "Connecting to international health-data networks and building a smart children's hospital.", vi: "Kết nối mạng lưới dữ liệu y tế quốc tế và xây dựng bệnh viện nhi thông minh." } },
     { id: "e19", phase: "p3", date: "2026-03-26", slides: [21], featured: true, news: [3], mou: true,
       title: { zh: "與白梅醫院正式簽署合作協議", en: "Formal cooperation agreement signed with Bạch Mai Hospital", vi: "Lễ ký kết thỏa thuận hợp tác với Bệnh viện Bạch Mai" },
       place: { zh: "河內", en: "Hanoi", vi: "Hà Nội" },
@@ -262,27 +260,22 @@ window.SITE_DATA = {
   /* ---------- 相簿：每張投影片的照片（由簡報自動產生） ---------- */
   photos: {
     2: ["s02-1.jpg"],
-    3: ["s03-1.jpg", "s03-2.jpg", "s03-3.jpg", "s03-4.jpg", "s03-5.jpg"],
-    4: ["s04-1.jpg", "s04-2.jpg", "s04-3.jpg", "s04-4.jpg"],
     5: ["s05-3.jpg", "s05-4.jpg", "s05-5.jpg"],
-    6: ["s06-1.jpg", "s06-2.jpg"],
     7: ["s07-1.jpg", "s07-2.jpg", "s07-3.jpg"],
     8: ["s08-1.jpg", "s08-2.jpg", "s08-3.jpg", "s08-4.jpg"],
     9: ["s09-1.jpg", "s09-2.jpg", "s09-3.jpg", "s09-4.jpg"],
     10: ["s10-1.jpg", "s10-2.jpg", "s10-3.jpg"],
-    11: ["s11-1.jpg", "s11-2.jpg"],
-    12: ["s12-1.jpg", "s12-2.jpg", "s12-3.jpg"],
     13: ["s13-1.jpg", "s13-2.jpg"],
     14: ["s14-1.jpg"],
     15: ["s15-1.jpg"],
     16: ["s16-1.jpg", "s16-2.jpg"],
     17: ["s17-1.jpg", "s17-2.jpg", "s17-3.jpg"],
     18: ["s18-1.jpg", "s18-2.jpg", "s18-3.jpg", "s18-4.jpg"],
-    19: ["s19-1.jpg", "s19-2.jpg", "s19-3.jpg", "s19-4.jpg"],
-    20: ["s20-1.jpg", "s20-2.jpg", "s20-3.jpg"],
-    21: ["s21-1.jpg", "s21-2.jpg", "s21-3.jpg"],
+    19: ["s19-3.jpg"],
+    20: ["s20-3.jpg"],
+    21: ["s21-1.jpg", "s21-3.jpg"],
     22: ["s22-1.jpg", "s22-2.jpg", "s22-3.jpg", "s22-4.jpg"],
-    23: ["s23-1.jpg", "s23-2.jpg", "s23-3.jpg"],
+    23: ["s23-2.jpg", "s23-3.jpg"],
     24: ["s24-1.jpg", "s24-2.jpg"],
     25: ["s25-1.jpg", "s25-2.jpg"],
     26: ["s26-1.jpg", "s26-2.jpg", "s26-3.jpg"],
@@ -296,9 +289,9 @@ window.SITE_DATA = {
   excludePhotos: [],
   /* 每個行程使用的代表照片 */
   cover: {
-    e01: "s02-1.jpg", e02: "s03-3.jpg", e03: "s04-2.jpg", e04: "s05-5.jpg", e05: "s06-1.jpg", e06: "s07-3.jpg", e07: "s08-2.jpg",
-    e08: "s09-3.jpg", e09: "s10-1.jpg", e10: "s11-2.jpg", e11: "s12-1.jpg", e12: "s13-1.jpg", e13: "s15-1.jpg", e14: "s16-1.jpg",
-    e15: "s17-1.jpg", e16: "s18-3.jpg", e17: "s19-3.jpg", e18: "s20-1.jpg", e19: "s21-2.jpg", e20: "s22-3.jpg", e21: "s23-1.jpg",
+    e01: "s02-1.jpg", e04: "s05-5.jpg", e06: "s07-3.jpg", e07: "s08-2.jpg",
+    e08: "s09-3.jpg", e09: "s10-1.jpg", e12: "s13-1.jpg", e13: "s15-1.jpg", e14: "s16-1.jpg",
+    e15: "s17-1.jpg", e16: "s18-3.jpg", e17: "s19-3.jpg", e18: "s20-3.jpg", e19: "s21-3.jpg", e20: "s22-3.jpg", e21: "s23-2.jpg",
     e22: "s24-2.jpg", e23: "s25-1.jpg", e24: "s27-2.jpg", e25: "s28-2.jpg", e26: "s29-2.jpg", e27: "s30-1.jpg"
   },
 
@@ -306,10 +299,7 @@ window.SITE_DATA = {
   organizations: [
     { abbr: "TIAI",
       name: { zh: "台灣人工智慧發展協會", en: "Taiwan Institute of Artificial Intelligence (TIAI)", vi: "Hiệp hội Phát triển Trí tuệ Nhân tạo Đài Loan (TIAI)" },
-      desc: { zh: "推動人工智慧在醫療領域的研究與應用，為台越 Smart ICU 與智慧醫院合作的簽署方之一。", en: "Advances AI research and application in healthcare; a signatory to the Taiwan–Vietnam Smart ICU and smart-hospital agreements.", vi: "Thúc đẩy nghiên cứu và ứng dụng trí tuệ nhân tạo trong y tế; là một bên ký kết các thỏa thuận Smart ICU và bệnh viện thông minh Việt Nam – Đài Loan." } },
-    { abbr: "OHDSI Taiwan",
-      name: { zh: "OHDSI Taiwan", en: "OHDSI Taiwan Chapter", vi: "Hiệp hội OHDSI Đài Loan" },
-      desc: { zh: "國際觀察性健康資料科學與資訊學（OHDSI）社群的台灣分會，推動 OMOP 共通資料模型與跨國多中心研究。", en: "The Taiwan chapter of the Observational Health Data Sciences and Informatics (OHDSI) community, promoting the OMOP common data model and multi-center international research.", vi: "Chi hội Đài Loan của cộng đồng Khoa học và Tin học Dữ liệu Sức khỏe Quan sát (OHDSI), thúc đẩy mô hình dữ liệu chung OMOP và nghiên cứu đa trung tâm quốc tế." } }
+      desc: { zh: "推動人工智慧在醫療領域的研究與應用，台越 Smart ICU 與智慧醫院合作備忘錄由其與越南醫院簽署。", en: "Advances AI research and application in healthcare; signatory of the Taiwan–Vietnam Smart ICU and smart-hospital MOUs with the Vietnamese hospitals.", vi: "Thúc đẩy nghiên cứu và ứng dụng trí tuệ nhân tạo trong y tế; là bên ký kết các MOU Smart ICU và bệnh viện thông minh với các bệnh viện Việt Nam." } },
   ],
 
   /* ---------- 合作夥伴（依國家） ---------- */
@@ -345,8 +335,7 @@ window.SITE_DATA = {
       title: { zh: "K 醫院推動國際合作，以 AI 打造智慧醫院", en: "K Hospital pursues international cooperation to build a smart hospital with AI", vi: "Bệnh viện K hợp tác quốc tế, thúc đẩy bệnh viện thông minh bằng AI" } },
     { date: "2026-03-26", lang: "vi", url: "https://benhviennhitrunguong.gov.vn/ky-ket-bien-ban-ghi-nho-hop-tac-mou-voi-hai-hiep-hoi-ohdsi-va-tiai-dai-loan-trung-quoc.html",
       source: { zh: "越南國家兒童醫院", en: "Vietnam National Children's Hospital", vi: "Bệnh viện Nhi Trung ương" },
-      original: "Ký kết Biên bản ghi nhớ hợp tác (MOU) với hai hiệp hội OHDSI và TIAI: Kết nối dữ liệu y tế toàn cầu, thúc đẩy phát triển bệnh viện thông minh",
-      title: { zh: "與 OHDSI、TIAI 兩協會簽署合作備忘錄：連結全球醫療數據，推動智慧醫院發展", en: "MOU signed with OHDSI and TIAI: connecting global health data and advancing the smart hospital", vi: "Ký kết Biên bản ghi nhớ hợp tác (MOU) với hai hiệp hội OHDSI và TIAI: Kết nối dữ liệu y tế toàn cầu, thúc đẩy phát triển bệnh viện thông minh" } },
+      title: { zh: "與台灣合作夥伴簽署合作備忘錄：連結全球醫療數據，推動智慧醫院發展", en: "MOU signed with Taiwanese partners: connecting global health data and advancing the smart hospital", vi: "Ký kết Biên bản ghi nhớ hợp tác (MOU) với các đối tác Đài Loan: Kết nối dữ liệu y tế toàn cầu, thúc đẩy phát triển bệnh viện thông minh" } },
     { date: "2026-03-26", lang: "vi", url: "https://suckhoedoisong.vn/hop-tac-quoc-te-thuc-day-chuyen-doi-so-y-te-huong-toi-benh-vien-dieu-tri-cham-soc-tre-em-thong-minh-169260325214620341.htm",
       source: { zh: "健康與生活報 Sức khỏe & Đời sống", en: "Sức khỏe & Đời sống", vi: "Báo Sức khỏe & Đời sống" },
       original: "Hợp tác quốc tế thúc đẩy chuyển đổi số y tế tại Bệnh viện Nhi Trung ương",
