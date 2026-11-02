@@ -11,7 +11,7 @@ window.SITE_DATA = {
     fullName: { zh: "醫盾人工智慧股份有限公司", en: "AegisMed AI co.", vi: "AegisMed AI co." },
     legal: { zh: "醫盾人工智慧股份有限公司（AegisMed AI co.）", en: "AegisMed AI co. (醫盾人工智慧股份有限公司)", vi: "AegisMed AI co. (醫盾人工智慧股份有限公司)" },
     tagline: { zh: "從 HIS 升級，邁向 AI 原生的智慧醫院。", en: "From HIS upgrade to the AI-native smart hospital.", vi: "Từ nâng cấp HIS đến bệnh viện thông minh AI-native." },
-    email: "info.aegismed@gmail.com",
+    email: "amai.serve@gmail.com",
   },
 
   /* ---------- 解決方案 ---------- */
