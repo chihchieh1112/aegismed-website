@@ -119,7 +119,8 @@
 
   /* ---------- 導覽列 ---------- */
   function initNav() {
-    const here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    let here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    if (!here.includes(".")) here += ".html"; /* Cloudflare Pages 會把 /about.html 轉成 /about */
     document.querySelectorAll(".nav-links a").forEach((a) => {
       const href = (a.getAttribute("href") || "").toLowerCase();
       if (href === here || (here.startsWith("solution-") && href === "solutions.html")) a.classList.add("active");
